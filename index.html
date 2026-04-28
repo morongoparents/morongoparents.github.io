@@ -14,6 +14,121 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
   <style>
+    .next-date {
+
+  border: 2px solid var(--accent);
+
+  padding: 22px;
+
+  margin: 18px 0 28px;
+
+  background: #fffdf9;
+
+}
+
+.date-label {
+
+  display: inline-block;
+
+  background: var(--accent);
+
+  color: white;
+
+  padding: 5px 8px;
+
+  font-size: 0.78rem;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+
+  margin-bottom: 10px;
+
+}
+
+.next-date h3 {
+
+  margin: 0 0 10px;
+
+  font-size: 1.45rem;
+
+  line-height: 1.25;
+
+  color: var(--accent);
+
+}
+
+.timeline {
+
+  margin-top: 24px;
+
+}
+
+.timeline h3 {
+
+  margin: 0 0 14px;
+
+  font-size: 1.1rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.05em;
+
+}
+
+.timeline-item {
+
+  display: grid;
+
+  grid-template-columns: 130px 1fr;
+
+  gap: 18px;
+
+  border-top: 1px solid var(--line);
+
+  padding: 14px 0;
+
+}
+
+.timeline-item:last-child {
+
+  border-bottom: 1px solid var(--line);
+
+}
+
+.timeline-date {
+
+  font-weight: bold;
+
+  color: var(--accent);
+
+}
+
+.timeline-text {
+
+  color: var(--ink);
+
+}
+
+@media (max-width: 640px) {
+
+  .timeline-item {
+
+    grid-template-columns: 1fr;
+
+    gap: 4px;
+
+  }
+
+  .next-date {
+
+    padding: 18px;
+
+  }
+
+}
 
     .share-grid {
 
@@ -29,6 +144,7 @@
 
 }
 
+
 .share-buttons {
 
   display: flex;
@@ -36,6 +152,8 @@
   flex-wrap: wrap;
 
   gap: 10px;
+
+  margin: 16px 0 22px;
 
 }
 
@@ -83,21 +201,45 @@ button.share-btn {
 
 }
 
+.qr-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+
+  margin-top: 18px;
+
+}
+
 .qr-card {
 
   border: 1px solid var(--line);
 
-  padding: 16px;
+  background: #fffdf9;
 
-  background: #fff;
+  padding: 20px;
 
   text-align: center;
 
 }
 
+.qr-card h3 {
+
+  margin: 0 0 14px;
+
+  font-size: 1.05rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.05em;
+
+}
+
 .qr-image {
 
-  width: 180px;
+  width: 220px;
 
   max-width: 100%;
 
@@ -105,47 +247,57 @@ button.share-btn {
 
   display: block;
 
-  margin: 0 auto 10px;
+  margin: 0 auto 12px;
 
 }
 
-.-label {
+.qr-label {
 
-  margin: 0 0 12px;
+  margin: 0 0 4px;
 
-  font-size: 0.95rem;
-
-  color: var(--muted);
+  font-weight: bold;
 
 }
 
 .download-btn {
 
-  width: auto;
+  margin-top: 12px;
+
+}
+
+.share-note {
+
+  margin-top: 18px;
+
+  border-top: 1px solid var(--line);
+
+  padding-top: 14px;
 
 }
 
 @media (max-width: 700px) {
 
-  .share-grid {
+  .qr-grid {
 
     grid-template-columns: 1fr;
 
   }
 
-  .share-buttons {
-
-    gap: 8px;
-
-  }
-
   .share-btn {
 
-    flex: 1 1 calc(50% - 8px);
+    flex: 1 1 calc(50% - 10px);
 
     text-align: center;
 
   }
+
+  .download-btn {
+
+    width: 100%;
+
+  }
+
+}
 
 }
 
@@ -651,35 +803,109 @@ School closures are not just budget decisions. They reshape communities for deca
       <a class="button" href="https://c.org/nWyCsHG7BM">Sign the petition</a>
     </div>
 
-    <section id="dates">
+   <section id="dates">
 
-      <h2>Dates / What to do</h2>
+  <h2>Next date / What to do</h2>
 
-      <ul>
+  <div class="next-date">
 
-        <li>
+    <div class="date-label">Next meeting</div>
 
-          <span class="date">Wednesday, April 29, 2026 at 6:00 PM</span> —
+    <h3>Wednesday, April 29, 2026 · 6:00 PM</h3>
 
-          Enrollment Committee Meeting: Wednesday, April 29, 2026 at 6:00 PM, Joshua Tree Professional Development Center (Old Joshua Tree Elementary), 6061 Sunburst Ave, Joshua Tree.
+    <p>
 
-        </li>
+      Enrollment Committee Meeting at Joshua Tree Professional Development Center
 
-        <li>
+      <br>
 
-           Join us and submit public comment asking for clear alternatives, actual projected savings, transportation impacts, and a full community impact review.
+      <span class="small">Old Joshua Tree Elementary · 6061 Sunburst Ave, Joshua Tree</span>
 
-        </li>
+    </p>
 
-        <li>
+    <ul>
 
-          Share the petition and this page with parents, staff, students, alumni, neighbors, and local community groups.
+      <li>Attend if you can.</li>
 
-        </li>
+      <li>Submit public comment asking for clear alternatives, actual projected savings, transportation impacts, and a full community impact review.</li>
 
-      </ul>
+      <li>Share this page and the petition with parents, staff, students, alumni, neighbors, and local community groups.</li>
 
-    </section>
+    </ul>
+
+  </div>
+
+  <div class="timeline">
+
+    <h3>Upcoming timeline</h3>
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">Apr 29, 2026</div>
+
+      <div class="timeline-text">
+
+        <strong>Enrollment Committee Meeting</strong>
+
+        <br>
+
+        Joshua Tree Professional Development Center · 6:00 PM
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">TODO</div>
+
+      <div class="timeline-text">
+
+        <strong>Next Board Meeting</strong>
+
+        <br>
+
+        Add time, location, agenda link, and livestream link when available.
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">TODO</div>
+
+      <div class="timeline-text">
+
+        <strong>Public comment / petition push</strong>
+
+        <br>
+
+        Add deadline or target date.
+
+      </div>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <div class="timeline-date">Fall 2027</div>
+
+      <div class="timeline-text">
+
+        <strong>Earliest closure timeframe discussed</strong>
+
+        <br>
+
+        Community impact, transportation, staffing, and receiving-school effects should be fully reviewed before any irreversible decision.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
     <section id="press">
 
@@ -742,92 +968,93 @@ School closures are not just budget decisions. They reshape communities for deca
 
   </p>
 
-  <div class="share-grid">
+  <div class="share-buttons">
 
-    <div class="share-buttons">
+    <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" target="_blank" rel="noopener">
 
-      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" target="_blank" rel="noopener">
+      Facebook
 
-        Facebook
+    </a>
 
-      </a>
+    <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&text=Morongo%20Parents%20for%20Transparency" target="_blank" rel="noopener">
 
-      <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&text=Morongo%20Parents%20for%20Transparency" target="_blank" rel="noopener">
+      X / Twitter
 
-        X / Twitter
+    </a>
 
-      </a>
+    <a class="share-btn" href="mailto:?subject=Morongo Parents for Transparency&body=Here is the public information hub: https://www.savemorongoschools.com">
 
-      <a class="share-btn" href="mailto:?subject=Morongo Parents for Transparency&body=Here is the public information hub: https://www.savemorongoschools.com">
+      Email
 
-        Email
+    </a>
 
-      </a>
+    <a class="share-btn" href="sms:?&body=Morongo Parents for Transparency: https://www.savemorongoschools.com">
 
-      <a class="share-btn" href="sms:?&body=Morongo Parents for Transparency: https://www.savemorongoschools.com">
+      Text
 
-        Text
+    </a>
 
-      </a>
+    <button class="share-btn" type="button" onclick="copySiteLink()">
 
-      <button class="share-btn" type="button" onclick="copySiteLink()">
+      Copy Link
 
-        Copy Link
+    </button>
 
-      </button>
+    <button class="share-btn" type="button" onclick="nativeShare()">
 
-      <button class="share-btn" type="button" onclick="nativeShare()">
+      Share…
 
-        Share…
+    </button>
 
-      </button>
+  </div>
 
-    </div>
+  <p id="copy-status" class="small" aria-live="polite"></p>
 
-    <div class="-card">
+  <div class="qr-grid">
 
-      <img src="img/page-qr-code.png" alt="QR code linking to SaveMorongoSchools.com" class="qr-image">
+    <div class="qr-card">
+
+      <h3>Website QR</h3>
+
+      <img src="img/page-qr-code.png" alt="QR code linking to Save Morongo Schools website" class="qr-image">
 
       <p class="qr-label">Scan to open this website</p>
 
-      <p>
+      <p class="small">savemorongoschools.com</p>
 
-        <a class="share-btn download-btn" href="img/page-qr-code.png" download>
+      <a class="share-btn download-btn" href="img/page-qr-code.png" download>
 
-          Download QR
+        Download Website QR
 
-        </a>
-
-      </p>
+      </a>
 
     </div>
-    <div class="-card">
 
-      <img src="img/petition-qrcode.png" alt="QR code linking to Change.org petition" class="qr-image">
+    <div class="qr-card">
 
-      <p class="qr-label">Scan to sign Petition</p>
+      <h3>Petition QR</h3>
 
-      <p>
+      <img src="img/petition-qrcode.png" alt="QR code linking to the petition" class="qr-image">
 
-        <a class="share-btn download-btn" href="img/page-qr-code.png" download>
+      <p class="qr-label">Scan to sign the petition</p>
 
-          Download QR
+      <p class="small">Use this on flyers and handouts.</p>
 
-        </a>
+      <a class="share-btn download-btn" href="img/petition-qrcode.png" download>
 
-      </p>
+        Download Petition QR
+
+      </a>
 
     </div>
 
   </div>
 
-  <p class="small">
+  <p class="small share-note">
 
-    Website: <strong>https://www.savemorongoschools.com</strong>
+    For printed flyers, use one QR code when possible. The website QR is safest because this page can be updated if petition, press, or meeting links change.
 
   </p>
-
-  <p id="copy-status" class="small" aria-live="polite"></p>
 
 </section>
 
