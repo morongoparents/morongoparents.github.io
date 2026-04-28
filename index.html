@@ -15,6 +15,140 @@
   <link rel="apple-touch-icon" href="favicon.png">
   <style>
 
+    .share-grid {
+
+  display: grid;
+
+  grid-template-columns: 1.4fr 0.9fr;
+
+  gap: 20px;
+
+  align-items: start;
+
+  margin-top: 14px;
+
+}
+
+.share-buttons {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+}
+
+.share-btn {
+
+  display: inline-block;
+
+  border: 1px solid var(--ink);
+
+  background: #fff;
+
+  color: var(--ink);
+
+  text-decoration: none;
+
+  padding: 10px 12px;
+
+  font: inherit;
+
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.035em;
+
+  cursor: pointer;
+
+  line-height: 1.2;
+
+}
+
+.share-btn:hover {
+
+  background: var(--ink);
+
+  color: #fff;
+
+}
+
+button.share-btn {
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+}
+
+.qr-card {
+
+  border: 1px solid var(--line);
+
+  padding: 16px;
+
+  background: #fff;
+
+  text-align: center;
+
+}
+
+.qr-image {
+
+  width: 180px;
+
+  max-width: 100%;
+
+  height: auto;
+
+  display: block;
+
+  margin: 0 auto 10px;
+
+}
+
+.qr-label {
+
+  margin: 0 0 12px;
+
+  font-size: 0.95rem;
+
+  color: var(--muted);
+
+}
+
+.download-btn {
+
+  width: auto;
+
+}
+
+@media (max-width: 700px) {
+
+  .share-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .share-buttons {
+
+    gap: 8px;
+
+  }
+
+  .share-btn {
+
+    flex: 1 1 calc(50% - 8px);
+
+    text-align: center;
+
+  }
+
+}
+
     :root {
 
       --bg: #f5f3ee;
@@ -333,6 +467,19 @@
       padding-left: 20px;
 
     }
+    section {
+
+  background: var(--paper);
+
+  border: 1px solid var(--line);
+
+  padding: 22px;
+
+  margin: 18px 0;
+
+  scroll-margin-top: 74px;
+
+}
     section p,
 
   section li {
@@ -585,8 +732,9 @@ School closures are not just budget decisions. They reshape communities for deca
 
     </section>
 
-    <section id="share">
- <h2>Share this hub</h2>
+   <section id="share">
+
+  <h2>Share this hub</h2>
 
   <p>
 
@@ -594,31 +742,65 @@ School closures are not just budget decisions. They reshape communities for deca
 
   </p>
 
-  <div class="share-buttons">
+  <div class="share-grid">
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsavemorongoschools.com%2F" target="_blank" rel="noopener">
+    <div class="share-buttons">
 
-      Facebook
+      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" target="_blank" rel="noopener">
 
-    </a>
+        Facebook
 
-    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%savemorongoschools.com%2F&text=Morongo%20Parents%20for%20Transparency" target="_blank" rel="noopener">
+      </a>
 
-      X / Twitter
+      <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&text=Morongo%20Parents%20for%20Transparency" target="_blank" rel="noopener">
 
-    </a>
+        X / Twitter
 
-    <a href="mailto:?subject=Morongo Parents for Transparency&body=Here is the public information hub: https://www.savemorongoschools.com">
+      </a>
 
-      Email
+      <a class="share-btn" href="mailto:?subject=Morongo Parents for Transparency&body=Here is the public information hub: https://www.savemorongoschools.com">
 
-    </a>
+        Email
 
-    <a href="sms:?&body=Morongo Parents for Transparency: https://www.savemorongoschools.com">
+      </a>
 
-      Text
+      <a class="share-btn" href="sms:?&body=Morongo Parents for Transparency: https://www.savemorongoschools.com">
 
-    </a>
+        Text
+
+      </a>
+
+      <button class="share-btn" type="button" onclick="copySiteLink()">
+
+        Copy Link
+
+      </button>
+
+      <button class="share-btn" type="button" onclick="nativeShare()">
+
+        Share…
+
+      </button>
+
+    </div>
+
+    <div class="qr-card">
+
+      <img src="img/page-qr-code.png" alt="QR code linking to SaveMorongoSchools.com" class="qr-image">
+
+      <p class="qr-label">Scan to open this website</p>
+
+      <p>
+
+        <a class="share-btn download-btn" href="img/page-qr-code.png" download>
+
+          Download QR
+
+        </a>
+
+      </p>
+
+    </div>
 
   </div>
 
@@ -627,6 +809,8 @@ School closures are not just budget decisions. They reshape communities for deca
     Website: <strong>https://www.savemorongoschools.com</strong>
 
   </p>
+
+  <p id="copy-status" class="small" aria-live="polite"></p>
 
 </section>
 
@@ -643,6 +827,50 @@ School closures are not just budget decisions. They reshape communities for deca
     </footer>
 
   </main>
+
+  <script>
+
+  function copySiteLink() {
+
+    const url = "https://www.savemorongoschools.com";
+
+    navigator.clipboard.writeText(url).then(function () {
+
+      document.getElementById("copy-status").textContent = "Link copied.";
+
+    }).catch(function () {
+
+      document.getElementById("copy-status").textContent = "Could not copy link.";
+
+    });
+
+  }
+
+  function nativeShare() {
+
+    const shareData = {
+
+      title: "Morongo Parents for Transparency",
+
+      text: "Public information and action hub",
+
+      url: "https://www.savemorongoschools.com"
+
+    };
+
+    if (navigator.share) {
+
+      navigator.share(shareData).catch(function () {});
+
+    } else {
+
+      document.getElementById("copy-status").textContent = "Native sharing is not available on this device.";
+
+    }
+
+  }
+
+</script>
 
 </body>
 
