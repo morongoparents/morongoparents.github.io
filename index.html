@@ -8,146 +8,15 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Save Morongo Basin Schools!</title>
+  <title>Save Morongo Schools | Morongo Parents for Transparency</title>
 
   <meta name="description" content="Public information and action hub for Morongo Basin families seeking transparency before any school closure or consolidation decision.">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="apple-touch-icon" href="/favicon.png">
+
   <style>
-
-    .share-grid {
-
-  display: grid;
-
-  grid-template-columns: 1.4fr 0.9fr;
-
-  gap: 20px;
-
-  align-items: start;
-
-  margin-top: 14px;
-
-}
-
-.share-buttons {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-}
-
-.share-btn {
-
-  display: inline-block;
-
-  border: 1px solid var(--ink);
-
-  background: #fff;
-
-  color: var(--ink);
-
-  text-decoration: none;
-
-  padding: 10px 12px;
-
-  font: inherit;
-
-  font-weight: bold;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.035em;
-
-  cursor: pointer;
-
-  line-height: 1.2;
-
-}
-
-.share-btn:hover {
-
-  background: var(--ink);
-
-  color: #fff;
-
-}
-
-button.share-btn {
-
-  appearance: none;
-
-  -webkit-appearance: none;
-
-}
-
-.qr-card {
-
-  border: 1px solid var(--line);
-
-  padding: 16px;
-
-  background: #fff;
-
-  text-align: center;
-
-}
-
-.qr-image {
-
-  width: 180px;
-
-  max-width: 100%;
-
-  height: auto;
-
-  display: block;
-
-  margin: 0 auto 10px;
-
-}
-
-.-label {
-
-  margin: 0 0 12px;
-
-  font-size: 0.95rem;
-
-  color: var(--muted);
-
-}
-
-.download-btn {
-
-  width: auto;
-
-}
-
-@media (max-width: 700px) {
-
-  .share-grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  .share-buttons {
-
-    gap: 8px;
-
-  }
-
-  .share-btn {
-
-    flex: 1 1 calc(50% - 8px);
-
-    text-align: center;
-
-  }
-
-}
 
     :root {
 
@@ -165,7 +34,7 @@ button.share-btn {
 
       --accent-dark: #551313;
 
-      --max: 820px;
+      --max: 760px;
 
     }
 
@@ -183,24 +52,45 @@ button.share-btn {
 
     body {
 
-  margin: 0;
+      margin: 0;
 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 
-  background: var(--bg);
+      background: var(--bg);
 
-  color: var(--ink);
+      color: var(--ink);
 
-  line-height: 1.65;
+      line-height: 1.65;
 
-  font-size: 18px;
+      font-size: 18px;
 
-}
+    }
+
     a {
 
       color: var(--accent);
 
       font-weight: bold;
+
+    }
+
+    p {
+
+      margin: 0 0 1rem 0;
+
+    }
+
+    ul {
+
+      margin: 0;
+
+      padding-left: 20px;
+
+    }
+
+    li {
+
+      margin: 8px 0;
 
     }
 
@@ -242,17 +132,11 @@ button.share-btn {
 
       justify-content: center;
 
-      font-weight: bold;
-
-      font-size: 0.75rem;
-
-      line-height: 1.05;
-
-      text-align: center;
-
       background: #fff;
 
       flex: 0 0 auto;
+
+      object-fit: contain;
 
     }
 
@@ -382,21 +266,27 @@ button.share-btn {
 
     }
 
-   .summary {
+    .summary {
 
-  font-size: 1.15rem;
+      font-size: 1.15rem;
 
-  line-height: 1.75;
+      line-height: 1.75;
 
-  letter-spacing: 0;
+      letter-spacing: 0;
 
-  max-width: 42rem;
+      max-width: 42rem;
 
-  margin: 0 0 22px;
+      margin: 0 0 22px;
 
-  color: #2b3138;
+      color: #2b3138;
 
-}
+    }
+
+    .summary p {
+
+      margin: 0 0 1rem;
+
+    }
 
     .button {
 
@@ -430,17 +320,29 @@ button.share-btn {
 
     }
 
-     {
+    section {
 
       background: var(--paper);
 
       border: 1px solid var(--line);
 
-      padding: 22px;
+      padding: 26px;
 
-      margin: 18px 0;
+      margin: 42px 0 0;
 
       scroll-margin-top: 74px;
+
+    }
+
+    section p,
+
+    section li {
+
+      font-size: 1.02rem;
+
+      line-height: 1.72;
+
+      color: #2c333a;
 
     }
 
@@ -454,52 +356,11 @@ button.share-btn {
 
     }
 
-    p {
+    .small {
 
-      margin-top: 0;
+      color: var(--muted);
 
-    }
-
-    ul {
-
-      margin: 0;
-
-      padding-left: 20px;
-
-    }
-    section {
-
-  background: var(--paper);
-
-  border: 1px solid var(--line);
-
-  padding: 22px;
-
-  margin: 18px 0;
-
-  scroll-margin-top: 74px;
-
-}
-    section p,
-
-  section li {
-
-  font-size: 1.02rem;
-
-  line-height: 1.72;
-
-  color: #2c333a;
-
-}
-    p {
-
-  margin: 0 0 1rem 0;
-
-}
-
-    li {
-
-      margin: 8px 0;
+      font-size: 0.92rem;
 
     }
 
@@ -535,11 +396,235 @@ button.share-btn {
 
     }
 
-    .small {
+    /* Next date / timeline */
 
-      color: var(--muted);
+    .next-date {
 
-      font-size: 0.92rem;
+      border: 2px solid var(--accent);
+
+      padding: 22px;
+
+      margin: 18px 0 28px;
+
+      background: #fffdf9;
+
+    }
+
+    .date-label {
+
+      display: inline-block;
+
+      background: var(--accent);
+
+      color: white;
+
+      padding: 5px 8px;
+
+      font-size: 0.78rem;
+
+      font-weight: bold;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.06em;
+
+      margin-bottom: 10px;
+
+    }
+
+    .next-date h3 {
+
+      margin: 0 0 10px;
+
+      font-size: 1.45rem;
+
+      line-height: 1.25;
+
+      color: var(--accent);
+
+    }
+
+    .timeline {
+
+      margin-top: 24px;
+
+    }
+
+    .timeline h3 {
+
+      margin: 0 0 14px;
+
+      font-size: 1.1rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.05em;
+
+    }
+
+    .timeline-item {
+
+      display: grid;
+
+      grid-template-columns: 130px 1fr;
+
+      gap: 18px;
+
+      border-top: 1px solid var(--line);
+
+      padding: 14px 0;
+
+    }
+
+    .timeline-item:last-child {
+
+      border-bottom: 1px solid var(--line);
+
+    }
+
+    .timeline-date {
+
+      font-weight: bold;
+
+      color: var(--accent);
+
+    }
+
+    .timeline-text {
+
+      color: var(--ink);
+
+    }
+
+    /* Share section */
+
+    .share-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin: 16px 0 22px;
+
+    }
+
+    .share-btn {
+
+      display: inline-block;
+
+      border: 1px solid var(--ink);
+
+      background: #fff;
+
+      color: var(--ink);
+
+      text-decoration: none;
+
+      padding: 10px 12px;
+
+      font: inherit;
+
+      font-weight: bold;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.035em;
+
+      cursor: pointer;
+
+      line-height: 1.2;
+
+    }
+
+    .share-btn:hover {
+
+      background: var(--ink);
+
+      color: #fff;
+
+    }
+
+    button.share-btn {
+
+      appearance: none;
+
+      -webkit-appearance: none;
+
+    }
+
+    .qr-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 22px;
+
+      margin-top: 18px;
+
+    }
+
+    .qr-card {
+
+      border: 1px solid var(--line);
+
+      background: #fffdf9;
+
+      padding: 20px;
+
+      text-align: center;
+
+    }
+
+    .qr-card h3 {
+
+      margin: 0 0 14px;
+
+      font-size: 1.05rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.05em;
+
+    }
+
+    .qr-image {
+
+      width: 220px;
+
+      max-width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      margin: 0 auto 12px;
+
+    }
+
+    .qr-label {
+
+      margin: 0 0 4px;
+
+      font-weight: bold;
+
+    }
+
+    .download-btn {
+
+      margin-top: 12px;
+
+    }
+
+    .share-note {
+
+      margin-top: 18px;
+
+      border-top: 1px solid var(--line);
+
+      padding-top: 14px;
 
     }
 
@@ -551,13 +636,43 @@ button.share-btn {
 
       border-top: 1px solid var(--line);
 
-      margin-top: 28px;
+      margin-top: 42px;
 
       padding-top: 18px;
 
     }
 
+    @media (max-width: 700px) {
+
+      .qr-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .share-btn {
+
+        flex: 1 1 calc(50% - 10px);
+
+        text-align: center;
+
+      }
+
+      .download-btn {
+
+        width: 100%;
+
+      }
+
+    }
+
     @media (max-width: 640px) {
+
+      body {
+
+        font-size: 17px;
+
+      }
 
       .identity {
 
@@ -571,8 +686,6 @@ button.share-btn {
 
         height: 52px;
 
-        font-size: 0.68rem;
-
       }
 
       .button {
@@ -583,7 +696,21 @@ button.share-btn {
 
       }
 
-       {
+      section {
+
+        padding: 18px;
+
+      }
+
+      .timeline-item {
+
+        grid-template-columns: 1fr;
+
+        gap: 4px;
+
+      }
+
+      .next-date {
 
         padding: 18px;
 
@@ -639,45 +766,139 @@ button.share-btn {
 
       <div class="kicker">Situation summary</div>
 
-      <p class="summary">
-        Morongo Basin families depend on strong, accessible public schools. MUSD is discussing possible closure of up to four elementary schools — Morongo Valley, Landers, Friendly Hills, and Palm Vista — as early as Fall 2027.
+      <div class="summary">
 
-These closures would affect the whole district, including receiving schools facing larger classes, boundary changes, transportation impacts, staffing shifts, and program changes.
+        <p>
 
-Before any closure moves forward, the public deserves real savings numbers, transition costs, alternatives, administrative reduction options, and a clear fiscal stabilization plan.
+          Morongo Basin families depend on strong, accessible public schools. MUSD is discussing possible closure of up to four elementary schools — Morongo Valley, Landers, Friendly Hills, and Palm Vista — as early as Fall 2027.
 
-School closures are not just budget decisions. They reshape communities for decades.
-      </p>
+        </p>
+
+        <p>
+
+          These closures would affect the whole district, including receiving schools facing larger classes, boundary changes, transportation impacts, staffing shifts, and program changes.
+
+        </p>
+
+        <p>
+
+          Before any closure moves forward, the public deserves real savings numbers, transition costs, alternatives, administrative reduction options, and a clear fiscal stabilization plan.
+
+        </p>
+
+        <p>
+
+          School closures are not just budget decisions. They reshape communities for decades.
+
+        </p>
+
+      </div>
+
       <a class="button" href="https://c.org/nWyCsHG7BM">Sign the petition</a>
+
     </div>
 
     <section id="dates">
 
-      <h2>Dates / What to do</h2>
+      <h2>Next date / What to do</h2>
 
-      <ul>
+      <div class="next-date">
 
-        <li>
+        <div class="date-label">Next meeting</div>
 
-          <span class="date">Wednesday, April 29, 2026 at 6:00 PM</span> —
+        <h3>Wednesday, April 29, 2026 · 6:00 PM</h3>
 
-          Enrollment Committee Meeting: Wednesday, April 29, 2026 at 6:00 PM, Joshua Tree Professional Development Center (Old Joshua Tree Elementary), 6061 Sunburst Ave, Joshua Tree.
+        <p>
 
-        </li>
+          Enrollment Committee Meeting at Joshua Tree Professional Development Center
 
-        <li>
+          <br>
 
-           Join us and submit public comment asking for clear alternatives, actual projected savings, transportation impacts, and a full community impact review.
+          <span class="small">Old Joshua Tree Elementary · 6061 Sunburst Ave, Joshua Tree</span>
 
-        </li>
+        </p>
 
-        <li>
+        <ul>
 
-          Share the petition and this page with parents, staff, students, alumni, neighbors, and local community groups.
+          <li>Attend if you can.</li>
 
-        </li>
+          <li>Submit public comment asking for clear alternatives, actual projected savings, transportation impacts, and a full community impact review.</li>
 
-      </ul>
+          <li>Share this page and the petition with parents, staff, students, alumni, neighbors, and local community groups.</li>
+
+        </ul>
+
+      </div>
+
+      <div class="timeline">
+
+        <h3>Upcoming timeline</h3>
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">Apr 29, 2026</div>
+
+          <div class="timeline-text">
+
+            <strong>Enrollment Committee Meeting</strong>
+
+            <br>
+
+            Joshua Tree Professional Development Center · 6:00 PM
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">TODO</div>
+
+          <div class="timeline-text">
+
+            <strong>Next Board Meeting</strong>
+
+            <br>
+
+            Add time, location, agenda link, and livestream link when available.
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">TODO</div>
+
+          <div class="timeline-text">
+
+            <strong>Public comment / petition push</strong>
+
+            <br>
+
+            Add deadline or target date.
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="timeline-date">Fall 2027</div>
+
+          <div class="timeline-text">
+
+            <strong>Earliest closure timeframe discussed</strong>
+
+            <br>
+
+            Community impact, transportation, staffing, and receiving-school effects should be fully reviewed before any irreversible decision.
+
+          </div>
+
+        </div>
+
+      </div>
 
     </section>
 
@@ -687,18 +908,65 @@ School closures are not just budget decisions. They reshape communities for deca
 
       <ul class="link-list">
 
-        <li><a href="https://www.deserttrumpet.org/p/recap-morongo-unified-school-district">RECAP: Morongo Unified School District Board of Education Meeting, April 21, 2026 →</a></li>
-        <li><a href="https://www.deserttrumpet.org/p/letter-to-the-editor-students-are">LETTER TO THE EDITOR: Students Are More than Statistics →</a></li>
-        <li><a href="https://www.hidesertstar.com/deserttrail/closing-schools-one-some-none-musd-floats-options-for-shuttering-palm-vista-adjusting-boundaries/article_b74cb8e1-45f2-47be-8043-35f5fac0bd3e.html">Closing schools: One, some, none? MUSD floats options for shuttering Palm Vista, adjusting boundaries →</a></li>
-        <li><a href="https://www.hidesertstar.com/deserttrail/musd-allows-more-time-to-decide-school-closures/article_2b27f254-8528-47b0-8be2-518e84df616c.html">MUSD allows more time to decide school closures →</a></li>
-        <li><a href="https://z1077fm.com/balancing-numbers-and-community-the-musd-school-consolidation-debate-continues/">Balancing numbers and community, the MUSD school consolidation debate continues →</a></li>
+        <li>
 
-        <li><a href="https://z1077fm.com/parents-and-staff-pack-musd-meeting-to-discuss-school-closures-overcrowding-and-lack-of-transparency/">Parents and staff pack MUSD meeting to discuss school closures, overcrowding, and lack of transparency →</a></li>
-       
-        <!--
-        <li><a href=""> →</a></li>
-        <li><a href=""> →</a></li>
-        -->
+          <a href="https://www.deserttrumpet.org/p/recap-morongo-unified-school-district">
+
+            RECAP: Morongo Unified School District Board of Education Meeting, April 21, 2026 →
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <a href="https://www.deserttrumpet.org/p/letter-to-the-editor-students-are">
+
+            LETTER TO THE EDITOR: Students Are More than Statistics →
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <a href="https://www.hidesertstar.com/deserttrail/closing-schools-one-some-none-musd-floats-options-for-shuttering-palm-vista-adjusting-boundaries/article_b74cb8e1-45f2-47be-8043-35f5fac0bd3e.html">
+
+            Closing schools: One, some, none? MUSD floats options for shuttering Palm Vista, adjusting boundaries →
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <a href="https://www.hidesertstar.com/deserttrail/musd-allows-more-time-to-decide-school-closures/article_2b27f254-8528-47b0-8be2-518e84df616c.html">
+
+            MUSD allows more time to decide school closures →
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <a href="https://z1077fm.com/balancing-numbers-and-community-the-musd-school-consolidation-debate-continues/">
+
+            Balancing numbers and community, the MUSD school consolidation debate continues →
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <a href="https://z1077fm.com/parents-and-staff-pack-musd-meeting-to-discuss-school-closures-overcrowding-and-lack-of-transparency/">
+
+            Parents and staff pack MUSD meeting to discuss school closures, overcrowding, and lack of transparency →
+
+          </a>
+
+        </li>
 
       </ul>
 
@@ -716,9 +984,10 @@ School closures are not just budget decisions. They reshape communities for deca
 
       <ul class="link-list">
 
-        <li>Here we will upload shareable materials for you to distibute</li>
+        <li>Here we will upload shareable materials for you to distribute.</li>
 
         <!--
+
         <li><a href="TODO-FLYER-LINK">Printable one-page flyer →</a></li>
 
         <li><a href="TODO-COMMENT-TEMPLATE-LINK">Public comment template →</a></li>
@@ -726,110 +995,112 @@ School closures are not just budget decisions. They reshape communities for deca
         <li><a href="TODO-SURVEY-LINK">Community survey, if active →</a></li>
 
         <li><a href="TODO-DOCUMENTS-LINK">Public document folder / archive →</a></li>
+
         -->
 
       </ul>
 
     </section>
 
-   <section id="share">
+    <section id="share">
 
-  <h2>Share this hub</h2>
-
-  <p>
-
-    Share this page with parents, staff, students, neighbors, alumni, and community groups.
-
-  </p>
-
-  <div class="share-grid">
-
-    <div class="share-buttons">
-
-      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" target="_blank" rel="noopener">
-
-        Facebook
-
-      </a>
-
-      <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&text=Morongo%20Parents%20for%20Transparency" target="_blank" rel="noopener">
-
-        X / Twitter
-
-      </a>
-
-      <a class="share-btn" href="mailto:?subject=Morongo Parents for Transparency&body=Here is the public information hub: https://www.savemorongoschools.com">
-
-        Email
-
-      </a>
-
-      <a class="share-btn" href="sms:?&body=Morongo Parents for Transparency: https://www.savemorongoschools.com">
-
-        Text
-
-      </a>
-
-      <button class="share-btn" type="button" onclick="copySiteLink()">
-
-        Copy Link
-
-      </button>
-
-      <button class="share-btn" type="button" onclick="nativeShare()">
-
-        Share…
-
-      </button>
-
-    </div>
-
-    <div class="-card">
-
-      <img src="img/page-qr-code.png" alt="QR code linking to SaveMorongoSchools.com" class="qr-image">
-
-      <p class="qr-label">Scan to open this website</p>
+      <h2>Share this hub</h2>
 
       <p>
 
-        <a class="share-btn download-btn" href="img/page-qr-code.png" download>
-
-          Download QR
-
-        </a>
+        Share this page with parents, staff, students, neighbors, alumni, and community groups.
 
       </p>
 
-    </div>
-    <div class="-card">
+      <div class="share-buttons">
 
-      <img src="img/petition-qrcode.png" alt="QR code linking to Change.org petition" class="qr-image">
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" target="_blank" rel="noopener">
 
-      <p class="qr-label">Scan to sign Petition</p>
-
-      <p>
-
-        <a class="share-btn download-btn" href="img/page-qr-code.png" download>
-
-          Download QR
+          Facebook
 
         </a>
 
+        <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&text=Morongo%20Parents%20for%20Transparency" target="_blank" rel="noopener">
+
+          X / Twitter
+
+        </a>
+
+        <a class="share-btn" href="mailto:?subject=Morongo Parents for Transparency&body=Here is the public information hub: https://www.savemorongoschools.com">
+
+          Email
+
+        </a>
+
+        <a class="share-btn" href="sms:?&body=Morongo Parents for Transparency: https://www.savemorongoschools.com">
+
+          Text
+
+        </a>
+
+        <button class="share-btn" type="button" onclick="copySiteLink()">
+
+          Copy Link
+
+        </button>
+
+        <button class="share-btn" type="button" onclick="nativeShare()">
+
+          Share…
+
+        </button>
+
+      </div>
+
+      <p id="copy-status" class="small" aria-live="polite"></p>
+
+      <div class="qr-grid">
+
+        <div class="qr-card">
+
+          <h3>Website QR</h3>
+
+          <img src="img/page-qr-code.png" alt="QR code linking to Save Morongo Schools website" class="qr-image">
+
+          <p class="qr-label">Scan to open this website</p>
+
+          <p class="small">savemorongoschools.com</p>
+
+          <a class="share-btn download-btn" href="img/page-qr-code.png" download>
+
+            Download Website QR
+
+          </a>
+
+        </div>
+
+        <div class="qr-card">
+
+          <h3>Petition QR</h3>
+
+          <img src="img/petition-qrcode.png" alt="QR code linking to the petition" class="qr-image">
+
+          <p class="qr-label">Scan to sign the petition</p>
+
+          <p class="small">Use this on flyers and handouts.</p>
+
+          <a class="share-btn download-btn" href="img/petition-qrcode.png" download>
+
+            Download Petition QR
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <p class="small share-note">
+
+        For printed flyers, use one QR code when possible. The website QR is safest because this page can be updated if petition, press, or meeting links change.
+
       </p>
 
-    </div>
-
-  </div>
-
-  <p class="small">
-
-    Website: <strong>https://www.savemorongoschools.com</strong>
-
-  </p>
-
-  <p id="copy-status" class="small" aria-live="polite"></p>
-
-</section>
+    </section>
 
     <footer>
 
@@ -847,47 +1118,47 @@ School closures are not just budget decisions. They reshape communities for deca
 
   <script>
 
-  function copySiteLink() {
+    function copySiteLink() {
 
-    const url = "https://www.savemorongoschools.com";
+      const url = "https://www.savemorongoschools.com";
 
-    navigator.clipboard.writeText(url).then(function () {
+      navigator.clipboard.writeText(url).then(function () {
 
-      document.getElementById("copy-status").textContent = "Link copied.";
+        document.getElementById("copy-status").textContent = "Link copied.";
 
-    }).catch(function () {
+      }).catch(function () {
 
-      document.getElementById("copy-status").textContent = "Could not copy link.";
+        document.getElementById("copy-status").textContent = "Could not copy link.";
 
-    });
-
-  }
-
-  function nativeShare() {
-
-    const shareData = {
-
-      title: "Morongo Parents for Transparency",
-
-      text: "Public information and action hub",
-
-      url: "https://www.savemorongoschools.com"
-
-    };
-
-    if (navigator.share) {
-
-      navigator.share(shareData).catch(function () {});
-
-    } else {
-
-      document.getElementById("copy-status").textContent = "Native sharing is not available on this device.";
+      });
 
     }
 
-  }
+    function nativeShare() {
 
-</script>
+      const shareData = {
+
+        title: "Morongo Parents for Transparency",
+
+        text: "Public information and action hub",
+
+        url: "https://www.savemorongoschools.com"
+
+      };
+
+      if (navigator.share) {
+
+        navigator.share(shareData).catch(function () {});
+
+      } else {
+
+        document.getElementById("copy-status").textContent = "Native sharing is not available on this device.";
+
+      }
+
+    }
+
+  </script>
 
 </body>
 
