@@ -1,0 +1,591 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Morongo Parents for Transparency!</title>
+
+  <meta name="description" content="Public information and action hub for Morongo Basin families seeking transparency before any school closure or consolidation decision.">
+
+  <style>
+
+    :root {
+
+      --bg: #f5f3ee;
+
+      --paper: #ffffff;
+
+      --ink: #1f2328;
+
+      --muted: #606975;
+
+      --line: #d8d2c8;
+
+      --accent: #7f1d1d;
+
+      --accent-dark: #551313;
+
+      --max: 820px;
+
+    }
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+    body {
+
+      margin: 0;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      background: var(--bg);
+
+      color: var(--ink);
+
+      line-height: 1.55;
+
+    }
+
+    a {
+
+      color: var(--accent);
+
+      font-weight: bold;
+
+    }
+
+    .top {
+
+      background: var(--paper);
+
+      border-bottom: 1px solid var(--line);
+
+    }
+
+    .identity {
+
+      max-width: var(--max);
+
+      margin: 0 auto;
+
+      padding: 22px 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+    }
+
+    .seal {
+
+      width: 72px;
+
+      height: 72px;
+
+      border:;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-weight: bold;
+
+      font-size: 0.75rem;
+
+      line-height: 1.05;
+
+      text-align: center;
+
+      background: #fff;
+
+      flex: 0 0 auto;
+
+    }
+
+    .identity h1 {
+
+      margin: 0;
+
+      font-size: clamp(1.45rem, 5vw, 2.15rem);
+
+      line-height: 1.08;
+
+      letter-spacing: -0.025em;
+
+    }
+
+    .identity p {
+
+      margin: 5px 0 0;
+
+      color: var(--muted);
+
+      font-size: 0.98rem;
+
+    }
+
+    .nav {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 10;
+
+      background: rgba(255, 255, 255, 0.96);
+
+      border-bottom: 1px solid var(--line);
+
+      backdrop-filter: blur(8px);
+
+    }
+
+    .nav-inner {
+
+      max-width: var(--max);
+
+      margin: 0 auto;
+
+      padding: 9px 18px;
+
+      display: flex;
+
+      gap: 8px;
+
+      overflow-x: auto;
+
+      white-space: nowrap;
+
+    }
+
+    .nav a {
+
+      text-decoration: none;
+
+      color: var(--ink);
+
+      border: 1px solid transparent;
+
+      padding: 7px 9px;
+
+      font-size: 0.84rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.035em;
+
+    }
+
+    .nav a:hover {
+
+      background: var(--ink);
+
+      color: white;
+
+      border-color: var(--ink);
+
+    }
+
+    .nav a.primary {
+
+      background: var(--ink);
+
+      color: white;
+
+      border-color: var(--ink);
+
+    }
+
+    .wrap {
+
+      max-width: var(--max);
+
+      margin: 0 auto;
+
+      padding: 28px 18px 46px;
+
+    }
+
+    .hero {
+
+      margin: 26px 0 28px;
+
+    }
+
+    .kicker {
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+
+      color: var(--accent);
+
+      font-weight: bold;
+
+      font-size: 0.78rem;
+
+      margin-bottom: 12px;
+
+    }
+
+    .summary {
+
+      font-size: clamp(1.25rem, 4vw, 1.75rem);
+
+      line-height: 1.25;
+
+      letter-spacing: -0.025em;
+
+      max-width: 760px;
+
+      margin: 0 0 22px;
+
+    }
+
+    .button {
+
+      display: inline-block;
+
+      background: var(--accent);
+
+      color: white;
+
+      text-decoration: none;
+
+      border: 2px solid var(--accent);
+
+      padding: 13px 18px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.04em;
+
+      font-weight: bold;
+
+      font-size: 0.95rem;
+
+    }
+
+    .button:hover {
+
+      background: var(--accent-dark);
+
+      border-color: var(--accent-dark);
+
+    }
+
+    section {
+
+      background: var(--paper);
+
+      border: 1px solid var(--line);
+
+      padding: 22px;
+
+      margin: 18px 0;
+
+      scroll-margin-top: 74px;
+
+    }
+
+    h2 {
+
+      margin: 0 0 12px;
+
+      font-size: 1.28rem;
+
+      letter-spacing: -0.015em;
+
+    }
+
+    p {
+
+      margin-top: 0;
+
+    }
+
+    ul {
+
+      margin: 0;
+
+      padding-left: 20px;
+
+    }
+
+    li {
+
+      margin: 8px 0;
+
+    }
+
+    .date {
+
+      font-weight: bold;
+
+      color: var(--accent);
+
+    }
+
+    .link-list {
+
+      list-style: none;
+
+      padding-left: 0;
+
+    }
+
+    .link-list li {
+
+      border-top: 1px solid var(--line);
+
+      padding: 10px 0;
+
+      margin: 0;
+
+    }
+
+    .link-list li:first-child {
+
+      border-top: none;
+
+    }
+
+    .small {
+
+      color: var(--muted);
+
+      font-size: 0.92rem;
+
+    }
+
+    footer {
+
+      color: var(--muted);
+
+      font-size: 0.9rem;
+
+      border-top: 1px solid var(--line);
+
+      margin-top: 28px;
+
+      padding-top: 18px;
+
+    }
+
+    @media (max-width: 640px) {
+
+      .identity {
+
+        align-items: flex-start;
+
+      }
+
+      .seal {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 0.68rem;
+
+      }
+
+      .button {
+
+        width: 100%;
+
+        text-align: center;
+
+      }
+
+      section {
+
+        padding: 18px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="top">
+
+    <div class="identity">
+
+      <img class="seal" src="img/logoparent.png" alt="Morongo Parents for Transparency logo">
+
+      <div>
+
+        <h1>Morongo Parents for Transparency</h1>
+
+        <p>Public information and action hub.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <nav class="nav" aria-label="Page navigation">
+
+    <div class="nav-inner">
+
+      <a class="primary" href="TODO-PETITION-LINK">Petition</a>
+
+      <a href="#dates">Dates</a>
+
+      <a href="#press">Press</a>
+
+      <a href="#materials">Materials</a>
+
+      <a href="#share">Share</a>
+
+    </div>
+
+  </nav>
+
+  <main class="wrap">
+
+    <div class="hero">
+
+      <div class="kicker">School closure / consolidation transparency</div>
+
+      <p class="summary">
+
+        Families deserve real numbers, real alternatives, and real public input before any irreversible school closure or consolidation decision moves forward.
+
+      </p>
+
+      <a class="button" href="TODO-PETITION-LINK">Sign the petition</a>
+
+    </div>
+
+    <section id="dates">
+
+      <h2>Dates / What to do</h2>
+
+      <ul>
+
+        <li>
+
+          <span class="date">TODO: Month Day, 2026</span> —
+
+          Attend the board meeting. TODO: time, location, and livestream link.
+
+        </li>
+
+        <li>
+
+          Submit public comment asking for clear alternatives, actual projected savings, transportation impacts, and a full community impact review.
+
+        </li>
+
+        <li>
+
+          Share the petition and this page with parents, staff, students, alumni, neighbors, and local community groups.
+
+        </li>
+
+      </ul>
+
+    </section>
+
+    <section id="press">
+
+      <h2>Press / Published materials</h2>
+
+      <ul class="link-list">
+
+        <li><a href="TODO-PRESS-LINK-1">TODO: Published article or letter title →</a></li>
+
+        <li><a href="TODO-PRESS-LINK-2">TODO: Published article or community coverage →</a></li>
+
+        <li><a href="TODO-DISTRICT-AGENDA-LINK">TODO: District agenda / board packet →</a></li>
+
+      </ul>
+
+      <p class="small">
+
+        Links are provided so community members can review public information directly.
+
+      </p>
+
+    </section>
+
+    <section id="materials">
+
+      <h2>Shareable materials</h2>
+
+      <ul class="link-list">
+
+        <li><a href="TODO-FLYER-LINK">Printable one-page flyer →</a></li>
+
+        <li><a href="TODO-COMMENT-TEMPLATE-LINK">Public comment template →</a></li>
+
+        <li><a href="TODO-SURVEY-LINK">Community survey, if active →</a></li>
+
+        <li><a href="TODO-DOCUMENTS-LINK">Public document folder / archive →</a></li>
+
+      </ul>
+
+    </section>
+
+    <section id="share">
+
+      <h2>Share this hub</h2>
+
+      <p>
+
+        Use one QR code for this page. If petition, survey, press, or document links change later, this hub can be updated without reprinting flyers.
+
+      </p>
+
+      <p>
+
+        <strong>Website:</strong>
+
+        <span class="small">TODO: paste GitHub Pages URL here</span>
+
+      </p>
+
+    </section>
+
+    <footer>
+
+      <p>
+
+        Morongo Parents for Transparency is a community information effort. This page is for public links, dates, materials, and civic participation.
+
+      </p>
+
+      <p>Last updated: TODO Month Day, 2026</p>
+
+    </footer>
+
+  </main>
+
+</body>
+
+</html>
