@@ -320,6 +320,38 @@
 
     }
 
+    .hero-buttons {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+}
+
+.button.secondary {
+
+  background: #fff;
+
+  color: var(--ink);
+
+  border-color: var(--ink);
+
+}
+
+.button.secondary:hover {
+
+  background: var(--ink);
+
+  color: #fff;
+
+  border-color: var(--ink);
+
+}
+
     section {
 
       background: var(--paper);
@@ -668,6 +700,14 @@
 
     @media (max-width: 640px) {
 
+      .hero-buttons {
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+}
+
       body {
 
         font-size: 17px;
@@ -747,6 +787,7 @@
     <div class="nav-inner">
 
       <a class="primary" href="https://c.org/nWyCsHG7BM">Petition</a>
+      <a class="primary" href="https://tally.so/r/RG8MY4" target="_blank" rel="noopener">Join</a>
 
       <a href="#dates">Dates</a>
 
@@ -803,7 +844,21 @@ No closure before stabilization.<br>
 
       </div>
 
-      <a class="button" href="https://c.org/nWyCsHG7BM">Sign the petition</a>
+      <div class="hero-buttons">
+
+  <a class="button" href="https://c.org/nWyCsHG7BM">
+
+    Sign the petition
+
+  </a>
+
+  <a class="button secondary" href="https://tally.so/r/RG8MY4" target="_blank" rel="noopener">
+
+    Join!
+
+  </a>
+
+</div>
 
     </div>
 
