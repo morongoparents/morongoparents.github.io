@@ -1,1676 +1,384 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Save Morongo Schools | Morongo Parents for Transparency</title>
-
-  <meta name="description" content="Public information and action hub for Morongo Basin families seeking transparency before any school closure or consolidation decision.">
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-
-  <link rel="apple-touch-icon" href="/favicon.png">
-
-  <style>
-
-    .lyrics-box {
-
-  margin-top: 14px;
-
-  padding: 12px 14px;
-
-  border-left: 4px solid var(--accent);
-
-  background: #fff;
-
-}
-
-.lyrics-box p {
-
-  margin: 8px 0 0;
-
-  font-size: 1.05rem;
-
-  line-height: 1.55;
-
-  font-weight: 600;
-
-}
-
-    .song-box {
-
-  border: 1px solid var(--line);
-
-  background: #fffdf9;
-
-  padding: 14px;
-
-  margin: 18px 0;
-
-}
-
-.song-box audio {
-
-  width: 100%;
-
-  margin-top: 8px;
-
-}
-
-.song-box p:last-child {
-
-  margin-bottom: 0;
-
-}
-
-    .date-label-wrap {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 14px;
-
-  margin-bottom: 10px;
-
-}
-
-.date-label {
-  transform: translateY(4px);
-
-  display: inline-block;
-
-  background: var(--accent);
-
-  color: white;
-
-  padding: 5px 8px;
-
-  font-size: 0.78rem;
-
-  font-weight: bold;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.06em;
-
-}
-
-.live-dot {
-  
-
-  width: 1rem;
-
-  height: 1rem;
-
-  border-radius: 50%;
-
-  background: #c73722;
-
-  box-shadow:
-
-    0 0 0 0 rgba(199, 55, 34, 0.55),
-
-    0 0 8px rgba(199, 55, 34, 0.45);
-
-  animation: livePulse 1.6s ease-out infinite;
-
-  flex: 0 0 auto;
-
-}
-
-@keyframes livePulse {
-
-  0% {
-
-    transform: scale(1);
-
-    box-shadow:
-
-      0 0 0 0 rgba(199, 55, 34, 0.55),
-
-      0 0 8px rgba(199, 55, 34, 0.45);
-
-    opacity: 1;
-
-  }
-
-  70% {
-
-    transform: scale(1.08);
-
-    box-shadow:
-
-      0 0 0 10px rgba(199, 55, 34, 0),
-
-      0 0 14px rgba(199, 55, 34, 0.2);
-
-    opacity: 0.95;
-
-  }
-
-  100% {
-
-    transform: scale(1);
-
-    box-shadow:
-
-      0 0 0 0 rgba(199, 55, 34, 0),
-
-      0 0 8px rgba(199, 55, 34, 0);
-
-    opacity: 1;
-
-  }
-
-}
-
-    :root {
-
-      --bg: #f5f3ee;
-
-      --paper: #ffffff;
-
-      --ink: #1f2328;
-
-      --muted: #606975;
-
-      --line: #d8d2c8;
-
-      --accent: #7f1d1d;
-
-      --accent-dark: #551313;
-
-      --max: 760px;
-
-    }
-
-    * {
-
-      box-sizing: border-box;
-
-    }
-
-    html {
-
-      scroll-behavior: smooth;
-
-    }
-
-    body {
-
-      margin: 0;
-
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-
-      background: var(--bg);
-
-      color: var(--ink);
-
-      line-height: 1.65;
-
-      font-size: 18px;
-
-    }
-
-    a {
-
-      color: var(--accent);
-
-      font-weight: bold;
-
-    }
-
-    p {
-
-      margin: 0 0 1rem 0;
-
-    }
-
-    ul {
-
-      margin: 0;
-
-      padding-left: 20px;
-
-    }
-
-    li {
-
-      margin: 8px 0;
-
-    }
-
-    .top {
-
-      background: var(--paper);
-
-      border-bottom: 1px solid var(--line);
-
-    }
-
-    .identity {
-
-      max-width: var(--max);
-
-      margin: 0 auto;
-
-      padding: 22px 18px;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 14px;
-
-    }
-
-    .seal {
-
-      width: 72px;
-
-      height: 72px;
-
-      border: none;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background: #fff;
-
-      flex: 0 0 auto;
-
-      object-fit: contain;
-
-    }
-
-    .identity h1 {
-
-      margin: 0;
-
-      font-size: clamp(1.45rem, 5vw, 2.15rem);
-
-      line-height: 1.08;
-
-      letter-spacing: -0.025em;
-
-    }
-
-    .identity p {
-
-      margin: 5px 0 0;
-
-      color: var(--muted);
-
-      font-size: 0.98rem;
-
-    }
-
-    .nav {
-
-      position: sticky;
-
-      top: 0;
-
-      z-index: 10;
-
-      background: rgba(255, 255, 255, 0.96);
-
-      border-bottom: 1px solid var(--line);
-
-      backdrop-filter: blur(8px);
-
-    }
-
-    .nav-inner {
-
-      max-width: var(--max);
-
-      margin: 0 auto;
-
-      padding: 9px 18px;
-
-      display: flex;
-
-      gap: 8px;
-
-      overflow-x: auto;
-
-      white-space: nowrap;
-
-    }
-
-    .nav a {
-
-      text-decoration: none;
-
-      color: var(--ink);
-
-      border: 1px solid transparent;
-
-      padding: 7px 9px;
-
-      font-size: 0.84rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.035em;
-
-    }
-
-    .nav a:hover {
-
-      background: var(--ink);
-
-      color: white;
-
-      border-color: var(--ink);
-
-    }
-
-    .nav a.primary {
-
-      background: var(--ink);
-
-      color: white;
-
-      border-color: var(--ink);
-
-    }
-
-    .wrap {
-
-  max-width: var(--max);
-
-  margin: 0 auto;
-
-  padding: 12px 18px 46px;
-
-}
-
-.hero {
-
-  margin: 12px 0 28px;
-
-    }
-
-    .kicker {
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.1em;
-
-      color: var(--accent);
-
-      font-weight: bold;
-
-      font-size: 1.48 rem;
-
-      margin-bottom: 12px;
-
-    }
-
-    .summary {
-
-      font-size: 1.15rem;
-
-      line-height: 1.75;
-
-      letter-spacing: 0;
-
-      max-width: 42rem;
-
-      margin: 0 0 22px;
-
-      color: #2b3138;
-
-    }
-
-    .summary p {
-
-      margin: 0 0 1rem;
-
-    }
-
-    .button {
-
-      display: inline-block;
-
-      background: var(--accent);
-
-      color: white;
-
-      text-decoration: none;
-
-      border: 2px solid var(--accent);
-
-      padding: 13px 18px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.04em;
-
-      font-weight: bold;
-
-      font-size: 0.95rem;
-
-    }
-
-    .button:hover {
-
-      background: var(--accent-dark);
-
-      border-color: var(--accent-dark);
-
-    }
-
-    .hero-buttons {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin-top: 18px;
-
-}
-
-.button.secondary {
-
-  background: #fff;
-
-  color: var(--ink);
-
-  border-color: var(--ink);
-
-}
-
-.button.secondary:hover {
-
-  background: var(--ink);
-
-  color: #fff;
-
-  border-color: var(--ink);
-
-}
-
-    section {
-
-      background: var(--paper);
-
-      border: 1px solid var(--line);
-
-      padding: 26px;
-
-      margin: 42px 0 0;
-
-      scroll-margin-top: 74px;
-
-    }
-
-    section p,
-
-    section li {
-
-      font-size: 1.02rem;
-
-      line-height: 1.72;
-
-      color: #2c333a;
-
-    }
-
-    h2 {
-
-      margin: 0 0 12px;
-
-      font-size: 1.28rem;
-
-      letter-spacing: -0.015em;
-
-    }
-
-    .small {
-
-      color: var(--muted);
-
-      font-size: 0.92rem;
-
-    }
-
-    .date {
-
-      font-weight: bold;
-
-      color: var(--accent);
-
-    }
-
-    .link-list {
-
-      list-style: none;
-
-      padding-left: 0;
-
-    }
-
-    .link-list li {
-
-      border-top: 1px solid var(--line);
-
-      padding: 10px 0;
-
-      margin: 0;
-
-    }
-
-    .link-list li:first-child {
-
-      border-top: none;
-
-    }
-
-    /* Next date / timeline */
-
-    .next-date {
-
-      border: 2px solid var(--accent);
-
-      padding: 22px;
-
-      margin: 18px 0 28px;
-
-      background: #fffdf9;
-
-    }
-
-    .date-label {
-
-      display: inline-block;
-
-      background: var(--accent);
-
-      color: white;
-
-      padding: 5px 8px;
-
-      font-size: 0.78rem;
-
-      font-weight: bold;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.06em;
-
-      margin-bottom: 10px;
-
-    }
-
-    .next-date h3 {
-
-      margin: 0 0 10px;
-
-      font-size: 1.45rem;
-
-      line-height: 1.25;
-
-      color: var(--accent);
-
-    }
-
-    .timeline {
-
-      margin-top: 24px;
-
-    }
-
-    .timeline h3 {
-
-      margin: 0 0 14px;
-
-      font-size: 1.1rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.05em;
-
-    }
-
-    .timeline-item {
-
-      display: grid;
-
-      grid-template-columns: 130px 1fr;
-
-      gap: 18px;
-
-      border-top: 1px solid var(--line);
-
-      padding: 14px 0;
-
-    }
-
-    .timeline-item:last-child {
-
-      border-bottom: 1px solid var(--line);
-
-    }
-
-    .timeline-date {
-
-      font-weight: bold;
-
-      color: var(--accent);
-
-    }
-
-    .timeline-text {
-
-      color: var(--ink);
-
-    }
-
-    /* Share section */
-
-    .share-buttons {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-      margin: 16px 0 22px;
-
-    }
-
-    .share-btn {
-
-      display: inline-block;
-
-      border: 1px solid var(--ink);
-
-      background: #fff;
-
-      color: var(--ink);
-
-      text-decoration: none;
-
-      padding: 10px 12px;
-
-      font: inherit;
-
-      font-weight: bold;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.035em;
-
-      cursor: pointer;
-
-      line-height: 1.2;
-
-    }
-
-    .share-btn:hover {
-
-      background: var(--ink);
-
-      color: #fff;
-
-    }
-
-    button.share-btn {
-
-      appearance: none;
-
-      -webkit-appearance: none;
-
-    }
-
-    .qr-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-
-      gap: 22px;
-
-      margin-top: 18px;
-
-    }
-
-    .qr-card {
-
-      border: 1px solid var(--line);
-
-      background: #fffdf9;
-
-      padding: 20px;
-
-      text-align: center;
-
-    }
-
-    .qr-card h3 {
-
-      margin: 0 0 14px;
-
-      font-size: 1.05rem;
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.05em;
-
-    }
-
-    .qr-image {
-
-      width: 220px;
-
-      max-width: 100%;
-
-      height: auto;
-
-      display: block;
-
-      margin: 0 auto 12px;
-
-    }
-
-    .qr-label {
-
-      margin: 0 0 4px;
-
-      font-weight: bold;
-
-    }
-
-    .download-btn {
-
-      margin-top: 12px;
-
-    }
-
-    .share-note {
-
-      margin-top: 18px;
-
-      border-top: 1px solid var(--line);
-
-      padding-top: 14px;
-
-    }
-
-    footer {
-
-      color: var(--muted);
-
-      font-size: 0.9rem;
-
-      border-top: 1px solid var(--line);
-
-      margin-top: 42px;
-
-      padding-top: 18px;
-
-    }
-
-    @media (max-width: 700px) {
-
-      .qr-grid {
-
-        grid-template-columns: 1fr;
-
-      }
-
-      .share-btn {
-
-        flex: 1 1 calc(50% - 10px);
-
-        text-align: center;
-
-      }
-
-      .download-btn {
-
-        width: 100%;
-
-      }
-
-    }
-
-    @media (max-width: 640px) {
-
-      .nav-inner {
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 6px;
-
-  overflow-x: visible;
-
-  white-space: normal;
-
-  padding: 8px 10px;
-
-}
-
-.nav a {
-
-  text-align: center;
-
-  font-size: 0.76rem;
-
-  padding: 8px 6px;
-
-  letter-spacing: 0.025em;
-
-}
-
-      .hero-buttons {
-
-  display: grid;
-
-  grid-template-columns: 1fr;
-
-}
-
-      body {
-
-        font-size: 17px;
-
-      }
-
-      .identity {
-
-        align-items: flex-start;
-
-      }
-
-      .seal {
-
-        width: 52px;
-
-        height: 52px;
-
-      }
-
-      .button {
-
-        width: 100%;
-
-        text-align: center;
-
-      }
-
-      section {
-
-        padding: 18px;
-
-      }
-
-      .timeline-item {
-
-        grid-template-columns: 1fr;
-
-        gap: 4px;
-
-      }
-
-      .next-date {
-
-        padding: 18px;
-
-      }
-
-    }
-
-  </style>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Save Morongo Schools | Morongo Parents for Transparency</title>
+<meta content="Public information hub tracking the Landers Elementary closure debate after the Sept. 10 Landers and Sept. 22 Yucca Mesa community meetings, with MUSD documents, timelines and local reporting." name="description"/>
+<meta content="Save Morongo Schools" property="og:title"/>
+<meta content="After major public input at Landers and Yucca Mesa, the immediate closure decision is paused for now. Track the documents, unanswered questions and what happens next." property="og:description"/>
+<meta content="https://www.savemorongoschools.com" property="og:url"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="favicon.png" rel="apple-touch-icon"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
-
 <body>
-
-  <div class="top">
-
-    <div class="identity">
-
-      <img class="seal" src="img/logoparent.png" alt="Morongo Parents for Transparency logo">
-
-      <div>
-
-        <h1>Morongo Parents for Transparency!</h1>
-
-        <p>Public information and action hub.</p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <nav class="nav" aria-label="Page navigation">
-
-    <div class="nav-inner">
-
-      <a class="primary" href="https://c.org/nWyCsHG7BM">Petition</a>
-     
-
-      <a href="#dates">Dates</a>
-       <a href="https://tally.so/r/RG8MY4" target="_blank" rel="noopener">Join</a>
-
-      
-
-      <a href="/pdf/0515-Save-Morongo-Schools-one-page.pdf">Flyer</a>
-
-      <a href="#share">Share</a>
-      <a href="#"></a>
-
-    </div>
-
-  </nav>
-
-  <main class="wrap">
-
-    <div class="hero">
-
-      <div class="kicker">Protect our schools!</div>
-
-     <div class="summary">
-
-       <p>
-         <b>Where things stand now:</b>
-The school-closure issue is not over.
-This spring, MUSD considered closing or consolidating up to four elementary schools — <b>Morongo Valley, Landers, Friendly Hills and Palm Vista</b> — as part of its response to declining enrollment and budget pressure. 
-         After months of public meetings and strong community participation, the district’s <a href="https://z1077fm.com/enrollment-committee-shares-singular-recommendation-with-musd-board-school-closures-should-be-a-last-resort">the Enrollment Committee presented its final recommendation of no-closures to the MUSD Board:</a> and urged the district to pursue stabilization and enrollment alternatives first.
-       </p>
-       <p>
-         <b>But important decisions continued after families left for summer.</b> At the  <a href="https://www.deserttrumpet.org/p/at-musd-board-meeting-parents-raise?utm_source=publication-search">June 16 Board meeting,</a> the Board approved superintendent and administrator salary adjustments, extended Superintendent Dr. Patricio Vargas’s contract through 2030, and adopted new Board-policy language governing how individual trustees may engage with community complaints and concerns. 
-         Those actions intensified existing questions about spending, oversight and public access while the district was still describing serious fiscal pressures.
-       </p>
-      <p> <b>Now the closure question is returning.</b> At the <a href="https://www.deserttrumpet.org/p/recap-morongo-unified-school-district-d01">August 4 meeting,</a> Board President Christopher Clare asked for a comprehensive review of the district’s declining-enrollment and fiscal-stabilization work, specifically including school-boundary changes and potential school closures. A special Board study session has been set for August 25 at 8:30 a.m. at the Joshua Tree Professional Development Center.
+<header class="top">
+<div class="identity">
+<img alt="Morongo Parents for Transparency logo" class="seal" src="img/logoparent.png"/>
+<div>
+<h1>
+      Morongo Parents for Transparency
+     </h1>
+<p>
+      Public information and action hub.
+     </p>
+</div>
+</div>
+</header>
+<nav aria-label="Page navigation" class="nav">
+<div class="nav-inner">
+<a class="primary" href="https://c.org/nWyCsHG7BM">
+     Petition
+    </a>
+<a href="#status">
+     Update
+    </a><a href="timeline.html">Timeline</a>
+<a href="#dates">
+     Dates
+    </a>
+<a href="#documents">
+     Documents
+    </a>
+<a href="https://tally.so/r/RG8MY4" rel="noopener" target="_blank">
+     Join
+    </a>
+<a href="#share">
+     Share
+    </a>
+</div>
+</nav>
+<main class="wrap">
+<p class="small" style="margin: 0 0 12px 0;">
+  <strong>Which MUSD trustee area are you in?</strong>
+  <a href="area.html" target="_blank" rel="noopener">Check your address →</a>
 </p>
-       <p>
-         <b>At the same time, the November School Board election is approaching.</b> Three of the five trustee seats are on the ballot. Morongo Parents for Transparency will continue following the closure process and Board decisions, and will invite School Board candidates to answer the same questions about closures, spending, transparency, oversight and the future of our community schools so voters can compare their positions directly.
-
-       </p>
-       <!--
-
-  <p>
-
-    <b>Important update:</b> On June 9, <a href="https://z1077fm.com/enrollment-committee-shares-singular-recommendation-with-musd-board-school-closures-should-be-a-last-resort">the Enrollment Committee presented its final recommendation to the MUSD Board:</a> school closures should be treated as a last resort.
-
-
-  </p>
-
-  <p>
-
-   This is a major community win. Earlier closure and consolidation scenarios were not advanced as a closure recommendation to the Board. That happened because parents, staff, students, and community members showed up, spoke out, shared information, demanded transparency, and refused to let school closures move forward quietly.
-
-  </p>
-
-  <p>
-
-    But the situation is not over.
-
-The recommendation is now in the hands of the MUSD Board. The Board still has to decide how to respond, what budget stabilization path moves forward, and whether school closure discussions are truly paused or simply shifted into another process.
-
-We will continue monitoring Board meetings, district budget decisions, facility plans, boundary discussions, enrollment recovery efforts, and any future consolidation language.
-
-MUSD had previously discussed possible closure or consolidation scenarios involving up to four elementary schools — Morongo Valley, Landers, Friendly Hills, and Palm Vista — as early as Fall 2027. Any future closure or consolidation would affect the whole district, including receiving schools facing larger classes, boundary changes, longer transportation times, staffing impacts, program changes, traffic, parking, and campus-capacity concerns.
-  </p>
-
-       <p>
-         For now, the message is clear:
-
-The committee did not recommend closing schools.
-The Board must respect that.
-School closure must remain a true last resort.
-No closure without transparency.
-No closure without real alternatives.
-
-       </p>
--->
-  <p>
-
-    <b>The School Leaders study session confirmed that closure should not be treated as the first or most effective solution.</b>
-
-    <br>
-
-    <a href="/docs/2026BudgetStabilizationReport_MorongoUSD_FINAL-(002).pdf" target="_blank" rel="noopener">School Leaders study PDF</a>
-
-    <br>
-
-    <a href="/docs/MUSDBudgetStabilization_04292026-(2).pdf" target="_blank" rel="noopener">Budget Stabilization Review PDF</a>
-
-  </p>
-
-  <p>
-
-    Families and residents still deserve to see the full stabilization plan, real alternatives, actual savings, transportation impacts, administrative reductions, and community effects before any irreversible decision is made.
-
-  </p>
-
-  <p>
-
-    School closures are not just budget decisions. They reshape communities for decades.
-
-  </p>
-
-  <p>
-
-    <b>
-
-      No closure without transparency.<br>
-
-      No closure without alternatives.<br>
-
-      No closure before stabilization.<br>
-
-
-    </b>
-
-  </p>
-
-</div>
-
-      <div class="hero-buttons">
-
-  <a class="button" href="https://c.org/nWyCsHG7BM">
-
-    Sign the petition
-
-  </a>
-
-  <a class="button secondary" href="https://tally.so/r/RG8MY4" target="_blank" rel="noopener">
-
-    Join!
-
-  </a>
-
-        <a class="button secondary" href="/pdf/0515-Save-Morongo-Schools-one-page.pdf" target="_blank" rel="noopener">
-
-    FLYER (PDF)
-
-  </a>
-
-</div>
-
-    </div>
-
-    <section id="dates">
-
-      <h2>Next date / What to do</h2>
-
-      <div class="next-date">      
-       <div class="date-label-wrap">
-    <!--      <div class="date-label">Next meeting</div>
-          <span class="live-dot" aria-hidden="true"></span>
-        </div>
-        <!--
-         <h3>Wednesday, May 13, 2026 · 6:00 PM</h3>
-        <p>
-          <b>Enrollment Committee Meeting</b>
-          <br>
-          <strong>The committee is expected to approve <a href="https://simbli.eboardsolutions.com/meetings/TempFolder/Meetings/DRAFT%20Report%20and%20Board%20Recommendations_1519018zgknufrpn3xr3af0b5auqghp.pdf">consolidation report</strong>
-          <span class="small"> 
-            <br>
-            Joshua Tree Professional Development Center · 6:00 PM
-            <br>6061 Sunburst Ave., Joshua Tree, CA</span>
-        </p>
-        <ul>
-        
-          
-          <li><a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030337&MID=57791">Enrollment 7/11 Board Advisory Committee - Meeting Agenda</a></li>
-          
-          
-          <li>Attend to show your support for our schools. Bring your family, friends and neighbors</li>
-
-          <li>Submit public comment urging the committee to make <strong>no closure recommendation</strong> to the Board.</li>
-
-           <li>Ask the committee to state that the record is incomplete: no full alternatives analysis, no clear transition costs, no transportation impact analysis, no equity/community impact review, and no complete stabilization plan.</li>
-
-  <li>Ask committee members not to take responsibility for a rushed or predetermined process. If the committee cannot make a fully informed recommendation, it should say so clearly.</li>
-
-  <li>Keep sharing the <a href="https://c.org/nWyCsHG7BM">petition</a>, <a href="/pdf/0515-Save-Morongo-Schools-one-page.pdf">flyer</a>, and <a href="https://www.savemorongoschools.com">information hub</a> before the meeting.</li>
-
-          <li>Print and share this with parents, staff, students, alumni, neighbors, and local community groups.</li>
-        
-
-  
-
- 
-
-</ul>
-          
-            
-
-          <!--
-          <li>Print and share this <a href="/pdf/0515-Save-Morongo-Schools-one-page.pdf">flyer</a> and the <a href="https://c.org/nWyCsHG7BM">petition</a> with parents, staff, students, alumni, neighbors, and local community groups.</li>
-         </ul> 
-        -->
-       
-     <!-- </div> -->
-        
-  
-         <div class="date-label">Next meeting</div>
-          <span class="live-dot" aria-hidden="true"></span>
-        </div>
-        <h3>Tuesday, August 25, 2026 · 8:30 AM</h3>
-
-        <p>
-
-          <b>Board Study Session</b>
-
-          <br>
-
-          <span class="small">Joshua Tree Professional Development Center · 8:30 AM, 6061 Sunburst Ave., Joshua Tree, CA</span>
-
-        </p>
-
-        <ul>
-        
-          <!-- <li> <a href="https://simbli.eboardsolutions.com/SB_Meetings/ViewMeeting.aspx?S=36030337&MID=47178" target="_blank">Board of Education Meeting Agenda →</a></li>
--->
-          <li>Attend to show your support for our schools and public overwatch of decisions to be made</li>
-
-         <!-- < <li>Submit public comment asking to suport Enrollment Committee no closure recommendations of budget stabilization </li>
-
-      <!--    <div class="song-box">
-
-  <strong>Song for the event</strong>
-
-  <p class="small">
-
-    To the tune of <em>Auld Lang Syne</em>. Practice before the meeting.
-
-  </p>
-
-  <audio controls preload="none">
-
-    <source src="/audio/School_Board_Meeting_Song 6-9_1.mp3" type="audio/mpeg">
-
-    Your browser does not support the audio player.
-
-  </audio>
-             <div class="lyrics-box">
-
-    <strong>Lyrics</strong>
-
-    <p>
-
-      From Landers to Morongo El<br>
-
-      Palm Vista, Friendly Hills<br>
-
-      All students there deserve our care<br>
-
-      And fight for all we will!
-
-    </p>
-
-  </div>
-
-  <p class="small">
-
-    <a href="/audio/School_Board_Meeting_Song 6-9_1.mp3" download>Download MP3 →</a>
-
-  </p>
-
-</div>
-
-          <!-- <li>Print and share this <a href="/pdf/0515-Save-Morongo-Schools-one-page.pdf">flyer</a> and the <a href="https://c.org/nWyCsHG7BM">petition</a> with parents, staff, students, alumni, neighbors, and local community groups.</li>
-         -->
-          
-        </ul>
-
-      </div>
-
-      
-      <div class="timeline">
-
-        <h3>Upcoming timeline</h3>
-
-        
-
-       
-
-        
-
-
-    
-        <div class="timeline-item">
-
-          <div class="timeline-date">Tue, September 8, 2026 · 6:00 PM</div>
-
-          <div class="timeline-text">
-
-            <strong>Regular Board Meeting</strong>
-
-            <br>
-
-            Joshua Tree Elementary School · 6:00 PM, 4950 Sunburst Ave., Joshua Tree, CA
-            <br>
-            
-            <strong>First regular meeting after the Aug. 25 closure study session</strong>
-
-          </div>
-
-        </div>
-
-        <div class="timeline-item">
-
-          <div class="timeline-date">Tue, October 13, 2026 · 6:00 PM</div>
-
-          <div class="timeline-text">
-
-            <strong>Regular Board Meeting</strong>
-
-            <br>
-
-            Joshua Tree Elementary School · 6:00 PM, 4950 Sunburst Ave., Joshua Tree, CA
-            <br>
-            
-            <strong>Takes place after ballots begin arriving</strong>
-
-          </div>
-
-        </div>
-      
-<!--
-          <div class="timeline-item">
-
-          <div class="timeline-date">June 16, 2026 · 6:00 PM</div>
-
-          <div class="timeline-text">
-
-            <strong>Board of Education Meeting and 2026-2027 budget</strong>
-
-            <br>
-
-            Joshua Tree Elementary School · 6:00 PM, 4950 Sunburst Ave., Joshua Tree, CA
-            <br>
-            <strong>The board is expected to approve 2026-2027 budget</strong>
-
-          </div>
-
-        </div>
-        -->
-
-        <div class="timeline-item">
-
-          <div class="timeline-date">November 3, 2026</div>
-
-          <div class="timeline-text">
-
-            <strong>General Election / School Board Accountability</strong>
-
+<div aria-labelledby="status-title" class="hero" id="status">
+<div class="kicker">Current status</div>
+<div class="summary">
+<p><b>After overwhelming public input at Landers, the immediate closure push is paused — for now.<br>
+  <br>
+</b><strong> Community update from the September 22 Yucca Mesa meeting:</strong> <br>
+The immediate Landers closure decision is paused for now. <br>
+Budget, boundary and facilities discussions continue, and we will keep tracking the numbers, documents and any return of a closure proposal.<br>
 <br>
-
-The November election is an opportunity to elect school board leadership (three out of five seats <a href="https://elections.sbcounty.gov/voterregistration/districtlookuptools">MAP</a> ) committed to transparency, rural schools, responsible budget oversight, and long-term community impact.
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-   
-
-    <section id="materials">
-
-  <h2>Shareable materials</h2>
-
-  <p>
-
-    Download, print, and share these materials with parents, staff, students, neighbors, and community groups.
-
-  </p>
-
-  <ul class="link-list">
-
-    <li>
-
-      <a href="/pdf/0515-Save-Morongo-Schools-one-page.pdf" target="_blank" rel="noopener">
-
-        One-page public call flyer — PDF →
-
+<strong>  Z107.7 reported at least 200 people at the September 10 Landers meeting</strong>, where families, students, staff and residents spent nearly three hours challenging the consolidation case. No final Board decision to close Landers has been made. <a href="https://z1077fm.com/landers-rallies-for-their-elementary-school-in-a-district-that-is-enrolling-less-students-every-year/" rel="noopener" target="_blank">Read the Z107.7 report →</a></p>
+<p> MUSD advanced Landers consolidation through the August 25 study session and September community meetings while major questions remained about net savings, transportation, receiving-site costs and which alternatives were actually implemented first. </p>
+</div>
+<div class="alert" role="note"><strong>The community was heard. Now make sure it stays heard.</strong> <br>
+  <em>Landers remains open. No final closure decision has been made. The next major checkpoints are the Oct. 13 Board meeting and the Oct. 22 study session on budget stabilization and possible boundary changes.</em></div>
+<div class="hero-buttons">
+<a class="button" href="pdf/Yucca_Mesa_10_Questions_Print.pdf" rel="noopener" target="_blank">10 UNANSWERED QUESTIONS</a>
+<a class="button secondary" href="#documents">documents</a>
+<a class="button secondary" href="area.html" rel="noopener" target="_blank">MY AREA?</a>
+</div>
+</div>
+<section id="dates">
+<h2>Current status &amp; next dates</h2>
+<p class="small">The Sept. 10 Landers and Sept. 22 Yucca Mesa community meetings are complete. No final closure decision has been made.</p>
+<div class="next-date">
+<div class="date-label-wrap"><div class="date-label">NEXT BOARD MEETING</div><span aria-hidden="true" class="live-dot"></span></div>
+<h3>Tuesday, October 13, 2026 · 6:00 PM</h3>
+<p><strong>Regular MUSD Board Meeting</strong><br/><span class="small">Joshua Tree Elementary School · 4950 Sunburst Ave., Joshua Tree</span></p>
+<p>Watch for any return of Landers consolidation, budget-stabilization, boundary or receiving-site items.</p>
+</div>
+<div aria-label="Upcoming timeline" class="timeline">
+<div class="timeline-item">
+  <div class="timeline-date">Oct. 5</div>
+<div class="timeline-text"><strong>Mail ballots / early voting begin</strong><br/>San Bernardino County delivers mail ballots to the U.S. Postal Service and early voting begins.</div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-date">Oct. 19</div>
+  <div class="timeline-text"><strong>Voter registration deadline</strong><br/>
+    Deadline listed by the San Bernardino County Registrar of Voters for the Nov. 3 General Election.</div>
+</div>
+<div class="timeline-item urgent-date">
+  <div class="timeline-date">Oct. 27</div>
+  <div class="timeline-text"><strong>MUSD study session expected</strong><br/>
+    The Board scheduled a study session to revisit the School Leaders budget-stabilization report and possible boundary changes.</div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-date">Nov. 3</div>
+<div class="timeline-text"><strong>General Election / MUSD School Board election</strong><br/>Election Day. Three of five MUSD trustee seats are on the ballot this cycle.</div>
+</div>
+</div>
+</section>
+<section id="documents">
+<h2>
+     Key documents
+    </h2>
+<p>
+     Read the source material directly. Official district documents are listed separately from community analysis.
+    </p>
+<h3 class="subhead">
+     Official / district materials
+    </h3>
+<ul class="link-list">
+<li>
+<a href="docs/enrollment-committee-final-report-2026.pdf" rel="noopener" target="_blank">
+       Enrollment/7-11 Committee final report and recommendations →
       </a>
-
-      <br>
-
-      <span class="small">Print or share digitally. Includes QR codes, key dates, and action steps.</span>
-
-    </li>
-
-        <!--
-
-        <li><a href="TODO-FLYER-LINK">Printable one-page flyer →</a></li>
-
-        <li><a href="TODO-COMMENT-TEMPLATE-LINK">Public comment template →</a></li>
-
-        <li><a href="TODO-SURVEY-LINK">Community survey, if active →</a></li>
-
-        <li><a href="TODO-DOCUMENTS-LINK">Public document folder / archive →</a></li>
-
-        -->
-
-      </ul>
-
-    </section>
-
-    <section id="share">
-
-      <h2>Share this hub</h2>
-
-      <p>
-
-        Share this page with parents, staff, students, neighbors, alumni, and community groups.
-
+<br/>
+<span class="small">
+       Includes the recommendation that closures remain a last resort and alternatives be implemented first.
+      </span>
+</li>
+<li>
+<a href="docs/aug-25-enrollment-study-session.pdf" rel="noopener" target="_blank">
+       August 25 Board study session presentation →
+      </a>
+<br/>
+<span class="small">
+       Enrollment counts, closure scenarios, boundary maps and transportation projections.
+      </span>
+</li>
+<li>
+<a href="docs/landers-personnel-savings.pdf" rel="noopener" target="_blank">
+       Personnel-savings tiers by school →
+      </a>
+<br/>
+<span class="small">
+       Shows gross personnel savings assumptions used in the closure discussion.
+      </span>
+</li>
+<li>
+<a href="docs/2026BudgetStabilizationReport_MorongoUSD_FINAL-(002).pdf" rel="noopener" target="_blank">
+       School Leaders budget stabilization report →
+      </a>
+</li>
+<li>
+<a href="docs/MUSDBudgetStabilization_04292026-(2).pdf" rel="noopener" target="_blank">
+       Budget stabilization review →
+      </a>
+</li>
+</ul>
+<details class="analysis-details">
+<summary>
+      Community analysis / hearing materials
+     </summary>
+<p class="small">These are independent community analyses and hearing materials, not district-issued reports. Post-hearing reports rely on a working transcript and meeting notes; exact quotations should be checked against the recording.</p>
+<ul class="link-list compact-list"><li><a href="docs/landers-post-hearing-dossier-2page.pdf" rel="noopener" target="_blank">Sept. 10 Landers hearing: 2-page post-hearing dossier →</a><br/>
+      <span class="small">Fast recap of what was said, what remains unanswered, and the next public questions.</span></li>
+<li><a href="docs/landers-post-hearing-longform-8page.pdf" rel="noopener" target="_blank">Sept. 10 Landers hearing: 8-page report →</a><br/><span class="small">Longform account of the hearing, district case, community testimony and unresolved decision questions.</span></li>
+      
+<li>
+<a href="docs/landers-gross-vs-net-community-analysis.pdf" rel="noopener" target="_blank">
+        Landers: gross savings vs. net effect →
+       </a>
+</li>
+<li>
+<a href="docs/landers-sept10-community-presentation.pdf" rel="noopener" target="_blank">
+        Landers Sept. 10 community presentation →
+       </a>
+</li>
+</ul>
+</details>
+</section>
+<section id="share">
+<h2>
+     Share this information
+    </h2>
+<p>
+     Please share this hub with other MUSD families and community members. The immediate Landers closure decision is paused for now, but the underlying budget, enrollment and boundary debate continues.
+     <strong>
+      Keep sharing the documents and following the meetings. This is not over.
+     </strong>
+</p>
+<div class="share-buttons">
+<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" rel="noopener" target="_blank">
+      Facebook
+     </a>
+<a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&amp;text=Save%20Morongo%20Schools" rel="noopener" target="_blank">
+      X / Twitter
+     </a>
+<a class="share-btn" href="mailto:?subject=Save Morongo Schools update&amp;body=Landers closure update: the immediate decision is paused for now. Follow the MUSD meetings, documents and timeline here: https://www.savemorongoschools.com">
+      Email
+     </a>
+<a class="share-btn" href="sms:?&amp;body=Save Morongo Schools update: https://www.savemorongoschools.com">
+      Text
+     </a>
+<button class="share-btn" id="copy-link" type="button">
+      Copy Link
+     </button>
+<button class="share-btn" id="native-share" type="button">
+      Share…
+     </button>
+</div>
+<p aria-live="polite" class="small" id="copy-status">
+</p>
+<div class="qr-grid">
+<div class="qr-card">
+<h3>
+       Website QR
+      </h3>
+<img alt="QR code linking to Save Morongo Schools website" class="qr-image" src="img/page-qr-code.png"/>
+<p class="qr-label">
+       Scan to open this website
       </p>
-
-      <div class="share-buttons">
-
-        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" target="_blank" rel="noopener">
-
-          Facebook
-
-        </a>
-
-        <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&text=Morongo%20Parents%20for%20Transparency" target="_blank" rel="noopener">
-
-          X / Twitter
-
-        </a>
-
-        <a class="share-btn" href="mailto:?subject=Morongo Parents for Transparency&body=Here is the public information hub: https://www.savemorongoschools.com">
-
-          Email
-
-        </a>
-
-        <a class="share-btn" href="sms:?&body=Morongo Parents for Transparency: https://www.savemorongoschools.com">
-
-          Text
-
-        </a>
-
-        <button class="share-btn" type="button" onclick="copySiteLink()">
-
-          Copy Link
-
-        </button>
-
-        <button class="share-btn" type="button" onclick="nativeShare()">
-
-          Share…
-
-        </button>
-
-      </div>
-
-      <p id="copy-status" class="small" aria-live="polite"></p>
-
-      <div class="qr-grid">
-
-        <div class="qr-card">
-
-          <h3>Website QR</h3>
-
-          <img src="img/page-qr-code.png" alt="QR code linking to Save Morongo Schools website" class="qr-image">
-
-          <p class="qr-label">Scan to open this website</p>
-
-          <p class="small">savemorongoschools.com</p>
-
-          <a class="share-btn download-btn" href="img/page-qr-code.png" download>
-
-            Download Website QR
-
-          </a>
-
-        </div>
-
-        <div class="qr-card">
-
-          <h3>Petition QR</h3>
-
-          <img src="img/petition-qrcode.png" alt="QR code linking to the petition" class="qr-image">
-
-          <p class="qr-label">Scan to sign the petition</p>
-
-          <p class="small">Use this on flyers and handouts.</p>
-
-          <a class="share-btn download-btn" href="img/petition-qrcode.png" download>
-
-            Download Petition QR
-
-          </a>
-
-        </div>
-
-      </div>
-
-      <p class="small share-note">
-
-        For printed flyers, use one QR code when possible. The website QR is safest because this page can be updated if petition, , or meeting links change.
-
+<p class="small">
+       savemorongoschools.com
       </p>
-
-    </section>
-
-     <section id="press">
-
-      <h2>Press / Published materials</h2>
-
-      <ul class="link-list">
- <li>
-          <a href="https://www.deserttrumpet.org/p/musd-enrollment-committee-recommends?utm_id=97757_v0_s00_e233_tv2_tp1_a1den5f08s6ynq&fbclid=IwY2xjawSfA4xleHRuA2FlbQIxMQBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEelhSu4kBtYTUjsYw6jb5Rj4w10IyKs4xadRinWlAGBGPgEnTwn-E7UvIL3hw_aem_VtZYXAfSXGEGy-E27411_Q">
-         Enrollment Committee recommends against closing schools at June 9, 2026 Board Meeting →
-        </li>
-        
-         <li>
-          <a href="https://z1077fm.com/enrollment-committee-shares-singular-recommendation-with-musd-board-school-closures-should-be-a-last-resort">
-          Committee shares singular recommendation with MUSD Board: “school closures should be a last resort” →
-        </li>
-
-         <li>
-          <a href="https://www.hidesertstar.com/deserttrail/no-schools-should-close-panel-says-decision-rests-with-board-of-education-now/article_be541fd0-41d7-4304-9133-455bc6f00906.html">
-          No schools should close, panel says; Decision rests with board of education now →
-        </li>
-
-        
-        <li>
-          <a href="https://z1077fm.com/musd-enrollment-committee-recommends-no-schools-closed-after-5-months-of-meetings">
-          MUSD Enrollment Committee recommends “no school closures” after 5 months of meetings →
-        </li>
-
-
-
-        <li>
-          <a href="https://www.deserttrumpet.org/p/possible-school-closures-dominate">
-          Possible School Closures Dominate May 5, 2026, MUSD Board Meeting as Community Pushes Back →
-        </li>
-
-        <li> 
-          <a href="https://z1077fm.com/public-backlash-against-school-closures-continued-at-tuesdays-musd-meeting">
-
-            Public backlash against school closures continued at Tuesday’s MUSD meeting →
-          
-        </li>
-        
-
-        <li> 
-          <a href="https://www.hidesertstar.com/deserttrail/rally-for-palm-vista-planned/article_de43d22b-6353-4224-8753-1e80913a49d4.html">
-
-            Rally for Palm Vista planned, 12 p.m. Saturday, May 9, at Knott Sky Park →
-          
-        </li>
-
-        <li> 
-          <a href="https://z1077fm.com/rally-to-keep-palm-vista-elementary-from-closing-held-in-twentynine-palms">
-
-            Keep Palm Vista Elementary open rally held in Twentynine Palms on May 2 →
-          
-        </li>
-
-        <li> 
-          <a href="https://www.hidesertstar.com/deserttrail/parents-staff-don-t-close-our-school-palm-vista-supporters-urge-board-of-education-to/article_614a807b-4d0d-4acf-8f14-b8b6ed455130.html">
-
-           Parents, staff: Don’t close our school; Palm Vista supporters urge board... →
-          
-        </li>
-
-        <li>
-
-          <a href="https://www.deserttrumpet.org/p/recap-morongo-unified-school-district">
-
-            RECAP: MUSD Board of Education Meeting, April 21, 2026 →
-
-          </a>
-
-        </li>
-
-        <li>
-
-          <a href="https://www.deserttrumpet.org/p/letter-to-the-editor-students-are">
-
-            LETTER TO THE EDITOR: Students Are More than Statistics →
-
-          </a>
-
-        </li>
-
-        <li>
-
-          <a href="https://www.hidesertstar.com/deserttrail/closing-schools-one-some-none-musd-floats-options-for-shuttering-palm-vista-adjusting-boundaries/article_b74cb8e1-45f2-47be-8043-35f5fac0bd3e.html">
-
-            Closing schools: One, some, none? MUSD floats options... →
-
-          </a>
-
-        </li>
-
-        <li>
-
-          <a href="https://www.hidesertstar.com/deserttrail/musd-allows-more-time-to-decide-school-closures/article_2b27f254-8528-47b0-8be2-518e84df616c.html">
-
-            MUSD allows more time to decide school closures →
-
-          </a>
-
-        </li>
-
-        <li>
-
-          <a href="https://z1077fm.com/balancing-numbers-and-community-the-musd-school-consolidation-debate-continues/">
-
-            Balancing numbers and community, the consolidation debate continues... →
-
-          </a>
-
-        </li>
-
-        <li>
-
-          <a href="https://z1077fm.com/parents-and-staff-pack-musd-meeting-to-discuss-school-closures-overcrowding-and-lack-of-transparency/">
-
-            Parents and staff pack MUSD meeting to discuss school closures... →
-
-          </a>
-
-        </li>
-
-      </ul>
-
-      <p class="small">
-
-        Links are provided so community members can review public information directly.
-
+<a class="share-btn download-btn" download="" href="img/page-qr-code.png">
+       Download Website QR
+      </a>
+</div>
+<div class="qr-card">
+<h3>
+       Petition QR
+      </h3>
+<img alt="QR code linking to the petition" class="qr-image" src="img/petition-qrcode.png"/>
+<p class="qr-label">
+       Scan to sign the petition
       </p>
-
-    </section>
-
-    <footer>
-
-      <p>
-
-        Morongo Parents for Transparency is a community information effort. This page is for public links, dates, materials, and civic participation. This page is not affiliated with or endorsed by MUSD
-
+<p class="small">
+       Use this on flyers and handouts.
       </p>
+<a class="share-btn download-btn" download="" href="img/petition-qrcode.png">
+       Download Petition QR
+      </a>
+</div>
+</div>
+</section>
+<section id="press">
+<h2>
+     Press / Published materials
+    </h2>
+<p class="small">Newest relevant coverage is listed first. Links are provided so readers can compare public reporting directly.</p>
+<ul class="link-list">
 
-        <p>
 
-    Contact / volunteer:
+<li><span class="new-tag">NEW</span> <a href="https://www.deserttrumpet.org/p/letter-to-the-editor-what-is-the" rel="noopener" target="_blank">Desert Trumpet — What Is the Brown Act, and Why Does It Matter for Our Community? (Sept. 23, 2026) →</a></li>
 
-    <a href="mailto:morongoparents@proton.me">morongoparents@proton.me</a>
+<li><span class="new-tag">NEW</span> <a href="https://z1077fm.com/landers-rallies-for-their-elementary-school-in-a-district-that-is-enrolling-less-students-every-year/" rel="noopener" target="_blank">Z107.7 — Landers rallies for its elementary school as district enrollment declines (Sept. 22, 2026) →</a></li>
+<li><span class="new-tag">NEW</span> <a href="https://www.hidesertstar.com/news/morongo-unified-leaders-families-face-off-over-school-closure-plan/article_1684b7d3-11c8-41f0-9f54-d3404f8af14d.html" rel="noopener" target="_blank">Hi-Desert Star — Morongo Unified leaders, families face off over school closure plan →</a></li>
+<li><span class="new-tag">NEW</span> <a href="https://www.hidesertstar.com/deserttrail/school-trustees-ok-raises-pull-back-on-bonus/article_f2ecd478-77f1-4e71-a9d5-e4f710b54c44.html" rel="noopener" target="_blank">Hi-Desert Star — School trustees OK raises, pull back on bonus →</a></li>
+<li><span class="new-tag">NEW</span> <a href="https://www.deserttrumpet.org/p/recap-morongo-unified-school-district-881" rel="noopener" target="_blank">Desert Trumpet — Recap: MUSD Board Meeting, Sept. 8, 2026 →</a></li>
+<li><a href="https://z1077fm.com/landers-homestead-valley-association-meeting-recap/" rel="noopener" target="_blank">Z107.7 — Landers Homestead Valley Association meeting recap; Save Landers Elementary committee announced (Sept. 17, 2026) →</a></li>
+<li><a href="https://z1077fm.com/landers-homestead-valley-community-association-meet-monday-9-14/" rel="noopener" target="_blank">Z107.7 — Landers Homestead Valley Community Association to discuss Sept. 10 MUSD forum (Sept. 14, 2026) →</a></li>
+<li><a href="https://z1077fm.com/community-meeting-at-landers-elementary-to-explore-possible-school-closures-and-boundary-consolidations/" rel="noopener" target="_blank">Z107.7 — Community meeting at Landers Elementary on possible closure and consolidation (Sept. 10, 2026) →</a></li>
+<li>
 
-  </p>
+<a href="https://z1077fm.com/can-the-morongo-basin-still-support-11-elementary-schools/" rel="noopener" target="_blank">
+       Z107.7 — Can the Morongo Basin still support 11 elementary schools? (Aug. 27, 2026) →
+      </a>
+</li>
+<li>
 
-      <p>Last updated: August 10, 2026, 08:06 PDT</p>
+<a href="https://www.hidesertstar.com/deserttrail/morongo-unified-school-district-when-is-a-school-too-small/article_c45a42fa-f279-412e-adc7-87c61a4d100d.html" rel="noopener" target="_blank">
+       Hi-Desert Star — Morongo Unified School District: When is a school too small? →
+      </a>
+</li>
+<li>
 
-    </footer>
-
-  </main>
-
-  <script>
-
-    function copySiteLink() {
-
-      const url = "https://www.savemorongoschools.com";
-
-      navigator.clipboard.writeText(url).then(function () {
-
-        document.getElementById("copy-status").textContent = "Link copied.";
-
-      }).catch(function () {
-
-        document.getElementById("copy-status").textContent = "Could not copy link.";
-
-      });
-
-    }
-
-    function nativeShare() {
-
-      const shareData = {
-
-        title: "Morongo Parents for Transparency",
-
-        text: "Public information and action hub",
-
-        url: "https://www.savemorongoschools.com"
-
-      };
-
-      if (navigator.share) {
-
-        navigator.share(shareData).catch(function () {});
-
-      } else {
-
-        document.getElementById("copy-status").textContent = "Native sharing is not available on this device.";
-
-      }
-
-    }
-
-  </script>
-
+<a href="https://z1077fm.com/musd-meeting-tuesday-8-25-to-review-report-from-enrollment-committee/" rel="noopener" target="_blank">
+       Z107.7 — MUSD meeting Aug. 25 to review report from Enrollment Committee (Aug. 24, 2026) →
+      </a>
+</li>
+<li>
+<a href="https://www.deserttrumpet.org/p/recap-morongo-unified-school-district-d01" rel="noopener" target="_blank">
+       Desert Trumpet — Recap: MUSD Board Meeting, August 4, 2026 →
+      </a>
+</li>
+<li>
+<a href="https://www.deserttrumpet.org/p/at-musd-board-meeting-parents-raise" rel="noopener" target="_blank">
+       Desert Trumpet — At MUSD Board Meeting, Parents Raise Questions About Budget and Trust (June 20, 2026) →
+      </a>
+</li>
+<li>
+<a href="https://www.deserttrumpet.org/p/musd-enrollment-committee-recommends" rel="noopener" target="_blank">
+       Enrollment Committee recommends against closing schools at June 9, 2026 Board Meeting →
+      </a>
+</li>
+<li>
+<a href="https://z1077fm.com/enrollment-committee-shares-singular-recommendation-with-musd-board-school-closures-should-be-a-last-resort" rel="noopener" target="_blank">
+       Committee shares singular recommendation with MUSD Board: “school closures should be a last resort” →
+      </a>
+</li>
+<li>
+<a href="https://www.hidesertstar.com/deserttrail/no-schools-should-close-panel-says-decision-rests-with-board-of-education-now/article_be541fd0-41d7-4304-9133-455bc6f00906.html" rel="noopener" target="_blank">
+       No schools should close, panel says; Decision rests with board of education now →
+      </a>
+</li>
+<li>
+<a href="https://z1077fm.com/musd-enrollment-committee-recommends-no-schools-closed-after-5-months-of-meetings" rel="noopener" target="_blank">
+       MUSD Enrollment Committee recommends “no school closures” after 5 months of meetings →
+      </a>
+</li>
+<li>
+<a href="https://www.deserttrumpet.org/p/possible-school-closures-dominate" rel="noopener" target="_blank">
+       Possible School Closures Dominate May 5, 2026, MUSD Board Meeting as Community Pushes Back →
+      </a>
+</li>
+<li>
+<a href="https://www.hidesertstar.com/deserttrail/rally-for-palm-vista-planned/article_de43d22b-6353-4224-8753-1e80913a49d4.html" rel="noopener" target="_blank">
+       Rally for Palm Vista planned, 12 p.m. Saturday, May 9, at Knott Sky Park →
+      </a>
+</li>
+<li>
+<a href="https://z1077fm.com/public-backlash-against-school-closures-continued-at-tuesdays-musd-meeting" rel="noopener" target="_blank">
+       Public backlash against school closures continued at Tuesday’s MUSD meeting →
+      </a>
+</li>
+<li>
+<a href="https://z1077fm.com/rally-to-keep-palm-vista-elementary-from-closing-held-in-twentynine-palms" rel="noopener" target="_blank">
+       Keep Palm Vista Elementary open rally held in Twentynine Palms on May 2 →
+      </a>
+</li>
+<li>
+<a href="https://www.hidesertstar.com/deserttrail/parents-staff-don-t-close-our-school-palm-vista-supporters-urge-board-of-education-to/article_614a807b-4d0d-4acf-8f14-b8b6ed455130.html" rel="noopener" target="_blank">
+       Parents, staff: Don’t close our school; Palm Vista supporters urge board... →
+      </a>
+</li>
+<li>
+<a href="https://www.deserttrumpet.org/p/recap-morongo-unified-school-district" rel="noopener" target="_blank">
+       RECAP: MUSD Board of Education Meeting, April 21, 2026 →
+      </a>
+</li>
+<li>
+<a href="https://www.deserttrumpet.org/p/letter-to-the-editor-students-are" rel="noopener" target="_blank">
+       LETTER TO THE EDITOR: Students Are More than Statistics →
+      </a>
+</li>
+<li>
+<a href="https://www.hidesertstar.com/deserttrail/closing-schools-one-some-none-musd-floats-options-for-shuttering-palm-vista-adjusting-boundaries/article_b74cb8e1-45f2-47be-8043-35f5fac0bd3e.html" rel="noopener" target="_blank">
+       Closing schools: One, some, none? MUSD floats options... →
+      </a>
+</li>
+<li>
+<a href="https://www.hidesertstar.com/deserttrail/musd-allows-more-time-to-decide-school-closures/article_2b27f254-8528-47b0-8be2-518e84df616c.html" rel="noopener" target="_blank">
+       MUSD allows more time to decide school closures →
+      </a>
+</li>
+<li>
+<a href="https://z1077fm.com/balancing-numbers-and-community-the-musd-school-consolidation-debate-continues/" rel="noopener" target="_blank">
+       Balancing numbers and community, the consolidation debate continues... →
+      </a>
+</li>
+<li>
+<a href="https://z1077fm.com/parents-and-staff-pack-musd-meeting-to-discuss-school-closures-overcrowding-and-lack-of-transparency/" rel="noopener" target="_blank">
+       Parents and staff pack MUSD meeting to discuss school closures... →
+      </a>
+</li>
+</ul>
+<p class="small">
+     Links are provided so community members can review public reporting directly. Newest items are at the top; oldest coverage is at the bottom.
+    </p>
+</section>
+<footer>
+<p>
+     Morongo Parents for Transparency is a community information effort. This site is not affiliated with or endorsed by MUSD.
+    </p>
+<p>
+     Contact / volunteer:
+     <a href="mailto:morongoparents@proton.me">
+      morongoparents@proton.me
+     </a>
+</p>
+<p>Last updated: September 27, 2026</p>
+</footer>
+</main>
+<script defer="" src="script.js">
+</script>
 </body>
-
 </html>
