@@ -28,6 +28,19 @@
       "url": ""
     },
     {
+      "id": "z1077-area5-forum-2026-10-16",
+      "date": "2026-10-16",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "title": "Z107.7 MUSD Trustee Area 5 Candidate Forum",
+      "category": "community",
+      "location": "Z107.7 FM radio · live broadcast",
+      "description": "Live on-air forum hosted by Gary Daigneault with candidates for MUSD Trustee Area 5. Podcast available later.",
+      "status": "confirmed",
+      "sourceUrl": "https://z1077fm.com/musd-candidate-forum-for-area-5-this-friday-10-16/",
+      "url": "https://z1077fm.com/podcasts/"
+    },
+    {
       "id": "voter-registration-2026",
       "date": "2026-10-19",
       "startTime": "",
@@ -43,14 +56,14 @@
     {
       "id": "musd-study-2026-10-27",
       "date": "2026-10-27",
-      "startTime": "",
+      "startTime": "08:30",
       "endTime": "",
-      "title": "MUSD Board study session — date to confirm",
+      "title": "MUSD Board Study Session — Budget Stabilization and Enrollment",
       "category": "board",
-      "location": "Location and time to be confirmed",
-      "description": "The published 2026 Board calendar lists October 27 for a study session. Earlier reporting mentioned October 22; check the official agenda before attending.",
-      "status": "tentative",
-      "sourceUrl": "https://www.morongo.k12.ca.us/",
+      "location": "Joshua Tree Professional Development Center · 6061 Sunburst Ave., Joshua Tree",
+      "description": "Board study session scheduled for 8:30 AM. The district is expected to review enrollment, ACCE/alternative programs and budget stabilization; check the posted agenda for the final scope and any changes.",
+      "status": "confirmed",
+      "sourceUrl": "https://z1077fm.com/morongo-unified-school-district-is-still-looking-for-enrollment-answers/",
       "url": ""
     },
     {
@@ -64,6 +77,19 @@
       "description": "Election Day; polls are open 7 AM–8 PM. Three MUSD trustee seats are on the ballot.",
       "status": "confirmed",
       "sourceUrl": "https://elections.sbcounty.gov/elections/2026/1103/",
+      "url": ""
+    },
+    {
+      "id": "musd-board-2026-11-10",
+      "date": "2026-11-10",
+      "startTime": "",
+      "endTime": "",
+      "title": "Regular MUSD Board of Education Meeting",
+      "category": "board",
+      "location": "Time and venue to be verified against the official agenda",
+      "description": "Next regular Board meeting scheduled for November 10. Meeting time, location and agenda not yet independently verified; consult the district before attending.",
+      "status": "confirmed",
+      "sourceUrl": "https://www.morongousd.org/",
       "url": ""
     }
   ]
