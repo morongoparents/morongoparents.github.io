@@ -1,0 +1,70 @@
+{
+  "timezone": "America/Los_Angeles",
+  "events": [
+    {
+      "id": "mail-ballots-2026",
+      "date": "2026-10-05",
+      "startTime": "",
+      "endTime": "",
+      "title": "Mail ballots and early voting begin",
+      "category": "election",
+      "location": "San Bernardino County",
+      "description": "Mail ballots are delivered to the U.S. Postal Service; early voting begins.",
+      "status": "confirmed",
+      "sourceUrl": "https://elections.sbcounty.gov/elections/2026/1103/",
+      "url": ""
+    },
+    {
+      "id": "musd-board-2026-10-13",
+      "date": "2026-10-13",
+      "startTime": "18:00",
+      "endTime": "",
+      "title": "Regular MUSD Board Meeting",
+      "category": "board",
+      "location": "Joshua Tree Elementary School · 4950 Sunburst Ave., Joshua Tree",
+      "description": "Watch for budget, school-boundary, enrollment and receiving-school items. Check the official agenda.",
+      "status": "confirmed",
+      "sourceUrl": "",
+      "url": ""
+    },
+    {
+      "id": "voter-registration-2026",
+      "date": "2026-10-19",
+      "startTime": "",
+      "endTime": "",
+      "title": "Voter registration deadline",
+      "category": "deadline",
+      "location": "California",
+      "description": "Last day for ordinary online registration or postmarking a registration application for the Nov. 3 election. Conditional registration remains available in person afterward.",
+      "status": "confirmed",
+      "sourceUrl": "https://elections.sbcounty.gov/elections/2026/1103/",
+      "url": ""
+    },
+    {
+      "id": "musd-study-2026-10-27",
+      "date": "2026-10-27",
+      "startTime": "",
+      "endTime": "",
+      "title": "MUSD Board study session — date to confirm",
+      "category": "board",
+      "location": "Location and time to be confirmed",
+      "description": "The published 2026 Board calendar lists October 27 for a study session. Earlier reporting mentioned October 22; check the official agenda before attending.",
+      "status": "tentative",
+      "sourceUrl": "https://www.morongo.k12.ca.us/",
+      "url": ""
+    },
+    {
+      "id": "general-election-2026",
+      "date": "2026-11-03",
+      "startTime": "07:00",
+      "endTime": "20:00",
+      "title": "General Election / MUSD Board election",
+      "category": "election",
+      "location": "San Bernardino County",
+      "description": "Election Day; polls are open 7 AM–8 PM. Three MUSD trustee seats are on the ballot.",
+      "status": "confirmed",
+      "sourceUrl": "https://elections.sbcounty.gov/elections/2026/1103/",
+      "url": ""
+    }
+  ]
+}

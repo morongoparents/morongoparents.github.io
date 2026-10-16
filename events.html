@@ -1,0 +1,25 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Community Calendar | Morongo Parents for Transparency</title>
+<meta name="description" content="Upcoming community meetings, public hearings, deadlines, and a growing archive of past events."/>
+<link rel="icon" href="favicon.png" type="image/png"/>
+<link href="styles.css" rel="stylesheet"/>
+<link href="events.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="top"><div class="identity"><img alt="Morongo Parents logo" class="seal" src="img/logoparent.png"/><div><h1>Morongo Parents for Transparency</h1><p>Community calendar &amp; event archive.</p></div></div></header>
+<nav aria-label="Page navigation" class="nav"><div class="nav-inner"><a href="index.html">Home</a><a href="index.html#status">Update</a><a href="timeline.html">Timeline</a><a class="primary" href="events.html">Calendar</a><a href="index.html#documents">Documents</a><a href="index.html#share">Share</a></div></nav>
+<main class="wrap">
+<section id="calendar"><h2>Community calendar</h2><p class="small">Events appear in chronological order and move to the archive after they finish. Tentative schedules should be verified with the organizer.</p>
+<div class="event-filter"><label for="event-category-filter">Show</label><select id="event-category-filter"><option value="all">All categories</option><option value="board">Board meetings</option><option value="hearing">Hearings</option><option value="community">Community</option><option value="election">Elections</option><option value="deadline">Deadlines</option><option value="other">Other</option></select></div>
+<h3 class="events-subheading">Upcoming</h3><div id="event-calendar-upcoming" class="timeline"><p class="small">Loading events…</p></div>
+<h3 id="archive" class="events-subheading event-archive-heading">Past &amp; canceled events</h3><div id="event-calendar-archive" class="timeline"></div>
+</section>
+<footer><p>Morongo Parents for Transparency is a community information effort and is not affiliated with or endorsed by MUSD.</p><p><a href="index.html">← Return to homepage</a></p><p>Last updated: <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ site.time | date: '%B %-d, %Y' }}</time> <span class="small">(site deployment)</span></p></footer>
+</main><script defer src="events.js"></script></body>
+</html>
