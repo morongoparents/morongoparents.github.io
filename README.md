@@ -63,3 +63,5 @@ Documents, timelines, QR images, district finder, styles, and sharing links were
 
 - Source-level extraction/structural validation and event unit tests run with Node.
 - Browser smoke checks can run against a local *simulated* Jekyll build; the actual GitHub Pages deploy configuration cannot be validated until published.
+
+### Connected and deploys to cloud flare
