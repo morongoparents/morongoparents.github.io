@@ -1,67 +1,28 @@
-# Morongo Parents — Modular GitHub Pages (v1.1)
+# Morongo Parents — Universal next-event red dot (v1.2b)
 
-The homepage is still the same static design. There is **no public editor, CMS, or database**.
+This patch changes the featured card from “next Board meeting” to **the earliest upcoming event of any type**. It retains the original pulsing red dot, red badge, and timeline design from the existing site.
 
-## Edit just the part you want
+## Deploy
 
-| Content | Edit this file | Result |
-|---|---|---|
-| Homepage status | `content/status.html` | Replaces the whole status card on the homepage |
-| Press / published materials | `content/press.html` | Replaces the whole press section; add newest `<li>` first |
-| Calendar (homepage + archive) | `data/events.json` | Future events sort themselves; past/canceled events move into the calendar archive |
+Replace these files in the **repository root** of `morongoparents/morongoparents.github.io`:
 
-Edit files in your GitHub repository, commit, and GitHub Pages deploys the updated website. No manual update to `index.html` is required for ordinary editorial changes. All these content files are *public*, so do not put passwords or private drafts in them.
+- `events.js` — makes the featured selection strictly chronological and dynamically labels it.
+- `events.css` — includes the v1.2 styling that restores the original red dot, for convenience if the prior patch was not uploaded.
 
-### Adding an event
+Commit to `main`. Cloudflare's connected Git build should redeploy the site. **No modifications to events.json, press, status, Jekyll, Wrangler or Cloudflare settings** are needed.
 
-In `data/events.json`, add another object to the `events` array (insert a comma between objects). Example:
+## Behavior
 
-```json
-{
-  "id": "community-forum-example",
-  "date": "2026-12-01",
-  "startTime": "18:00",
-  "endTime": "20:00",
-  "title": "Community forum (example)",
-  "category": "community",
-  "location": "Location to be announced",
-  "description": "Example only — replace this before publishing.",
-  "status": "tentative",
-  "sourceUrl": "",
-  "url": ""
-}
-```
+- The earliest upcoming event is featured regardless of category (Board meeting, hearing, community event, election, deadline, other).
+- The label reflects its type: `NEXT BOARD MEETING`, `NEXT PUBLIC HEARING`, `NEXT COMMUNITY EVENT`, `NEXT ELECTION`, `UPCOMING DEADLINE`, or `NEXT EVENT`.
+- The red dot is present for every featured event even before its start. The dot is decorative and does not imply the event is live.
+- The chronological list below shows the **following** upcoming events; the featured event is not duplicated.
+- The archival behavior is unchanged. Timed events with an `endTime` roll into the archive at that time; date-only events and events with a start time but no specified `endTime` remain current through their calendar day in America/Los_Angeles. For accurate same-day rollover, specify an end time in `data/events.json` when known.
+- Confirmed/tentative/canceled statuses, links, text, press items and current status are unaffected.
 
-Use unique lowercase-dashed IDs, `YYYY-MM-DD`, and 24-hour times in **America/Los_Angeles**. Leave start/end empty (`""`) for an all-day/unknown-time event. Use `tentative` for unconfirmed information and `canceled` when necessary. Categories: `board`, `hearing`, `community`, `election`, `deadline`, `other`. A timed event with an `endTime` archives at its end; without an end it archives after the calendar day. No server job is needed; the browser re-evaluates as time passes.
+## Tests
 
-**No editor is published.** The earlier `tools/event-editor.html` was intentionally removed.
+- Node calendar tests for chronological selection, category labels, cancellation, and event rollover.
+- Browser rendering test with simulated dates for the October 16 radio forum, October 19 deadline, October 27 Board study session, and November 3 general election; desktop and mobile pulsing-dot alignment.
 
-### How the separate HTML works
-
-`index.html` has two Jekyll `include_relative` directives:
-
-```
-{% include_relative content/status.html %}
-{% include_relative content/press.html %}
-```
-
-GitHub Pages merges these fragments **at build time**. This is a deliberate choice instead of JS fetching: the main page renders immediately, is indexed normally, and doesn't depend on extra network requests.
-
-The footer uses the same Jekyll build timestamp (`site.time`) and updates after each successful site build/deployment. It is labeled **site deployment**, not a claim that the news content itself was editorially reviewed that day. `_config.yml` sets the local timezone.
-
-### Deployment assumption (important)
-
-This package assumes **GitHub Pages → Deploy from a branch** (the default Jekyll build). The uploaded ZIP had no `.nojekyll` file or custom Pages workflow. GitHub Pages automatically applies Jekyll to HTML files with the two-line `---` front matter. Do not add `.nojekyll` or switch to raw static Actions uploads unless you also add a Jekyll build step. Otherwise you will see `{% include_relative ... %}` in the published source, with the status and press missing. See GitHub repository Settings → Pages → Build and deployment.
-
-**Local preview:** Double-clicking `index.html` will not process Jekyll directives, and local `file://` will not load calendar JSON. Preview using Jekyll (or deploy to a Pages test branch) rather than expecting file-opening to work. To validate the event data: `node tests/events.test.js`.
-
-### Existing non-calendar content
-
-Documents, timelines, QR images, district finder, styles, and sharing links were left unchanged. Some links in the supplied archive point to PDFs not included in that archive; this modularization does not attempt to repair or validate those references.
-
-### Test status
-
-- Source-level extraction/structural validation and event unit tests run with Node.
-- Browser smoke checks can run against a local *simulated* Jekyll build; the actual GitHub Pages deploy configuration cannot be validated until published.
-
-### Connected and deploys to cloud flare
+This is a source patch; it does not directly edit or deploy the live GitHub/Cloudflare site.

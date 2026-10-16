@@ -20,3 +20,24 @@
 .event-filter { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 10px 0 18px; font-size: .94rem; }
 .event-filter select { font: inherit; padding: 7px 10px; background: #fff; border: 1px solid var(--line, #d8d2c8); color: var(--ink, #1f2328); }
 @media (max-width: 640px) { .event-links { gap: 10px; } .events-more { margin-top: 18px; } }
+
+/* v1.2 — return the featured meeting badge to its original visual hierarchy. */
+.next-date .date-label-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.next-date .date-label {
+  transform: none;
+  margin: 0; /* overrides the older standalone label margin */
+}
+.next-date .live-dot {
+  display: block;
+  flex: 0 0 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .next-date .live-dot { animation: none; }
+}

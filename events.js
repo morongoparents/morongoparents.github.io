@@ -115,13 +115,28 @@
     link(p, 'Official source →', event.sourceUrl);
     if (p.childNodes.length) parent.append(p);
   }
+  // Feature the chronologically next event, whatever its category.
+  // The traditional red pulse is an attention cue, NOT a live-status claim.
+  function featuredLabel(event) {
+    return {
+      board: 'Next Board Meeting',
+      hearing: 'Next Public Hearing',
+      community: 'Next Community Event',
+      election: 'Next Election',
+      deadline: 'Upcoming Deadline',
+      other: 'Next Event'
+    }[event.category] || 'Next Event';
+  }
+  function selectFeatured(future) {
+    // partition() already sorts upcoming events by local date and start time.
+    return future[0] || null;
+  }
   function eventCard(event, clock) {
     const card = el('div', 'next-date');
     const labelWrap = el('div', 'date-label-wrap');
-    labelWrap.append(el('span', 'date-label', state(event, clock) === 'live' ? 'Happening now' : event.date === clock.date ? 'Today' : 'Next event'));
-    if (state(event, clock) === 'live') labelWrap.append(el('span', 'live-dot'));
+    labelWrap.append(el('span', 'date-label', featuredLabel(event)));
+    labelWrap.append(el('span', 'live-dot')); // restored permanent red pulse
     card.append(labelWrap);
-    card.append(el('div', 'event-category', CATEGORIES[event.category]));
     const heading = el('h3', '', printableDate(event.date, true) + (event.startTime ? ' · ' + printableTime(event.startTime) : ''));
     card.append(heading);
     const title = el('p');
@@ -140,7 +155,8 @@
     const body = el('div', 'timeline-text');
     const name = el('span', 'event-item-title', event.title);
     body.append(name);
-    body.append(el('div', 'event-category', CATEGORIES[event.category]));
+    // Avoid noisy/redundant gray all-caps categories such as "DEADLINE".
+    // Categories remain available for calendar filtering and event metadata.
     pills(body, event, clock);
     body.append(el('div', 'event-meta', (event.startTime ? timeLabel(event) + (event.location ? ' · ' : '') : '') + event.location));
     if (event.description) body.append(el('p', 'event-description', event.description));
@@ -158,13 +174,17 @@
     const { future, archive } = partition(events, clock);
     const featured = document.getElementById('event-featured');
     const short = document.getElementById('event-upcoming');
+    const mainEvent = selectFeatured(future);
     if (featured) {
-      if (future.length) featured.replaceChildren(eventCard(future[0], clock));
+      if (mainEvent) featured.replaceChildren(eventCard(mainEvent, clock));
       else empty(featured, 'No upcoming events are currently listed. Check back for updates.');
     }
     if (short) {
-      short.replaceChildren(...future.slice(1, 5).map(e => timelineItem(e, clock, false)));
-      if (future.length <= 1) empty(short, 'No additional events scheduled.');
+      // Show the following dates in chronological order, without duplicating
+      // the earliest event featured above.
+      const otherEvents = future.filter(e => !mainEvent || e.id !== mainEvent.id);
+      if (otherEvents.length) short.replaceChildren(...otherEvents.slice(0, 4).map(e => timelineItem(e, clock, false)));
+      else empty(short, 'No additional events scheduled.');
     }
     const long = document.getElementById('event-calendar-upcoming');
     if (long) {
@@ -198,7 +218,7 @@
     document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
   }
   // Export testable, pure time logic without exposing editing or publishing permissions.
-  const api = { validDate, normalize, localClock, state, partition, printableTime, init };
+  const api = { validDate, normalize, localClock, state, partition, printableTime, featuredLabel, selectFeatured, init };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof document !== 'undefined') {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
