@@ -1,0 +1,13 @@
+{%- comment -%}
+  Shared footer. Pass the deployment date from the page:
+  {% capture updated %}{{ site.time | date: '%B %-d, %Y' }}{% endcapture %}{% include footer.html updated=updated %}
+{%- endcomment -%}
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Morongo Parents for Transparency is a community information effort. This site is not affiliated with or endorsed by MUSD. Check meeting times against official district notices.</p>
+    <p>Contact / volunteer: <a href="mailto:morongoparents@proton.me">morongoparents@proton.me</a></p>
+    {%- if include.updated %}
+    <p>Site built <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ include.updated }}</time></p>
+    {%- endif %}
+  </div>
+</footer>

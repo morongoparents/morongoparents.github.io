@@ -1,0 +1,20 @@
+{%- assign built_day = site.time | date: "%Y-%m-%d" -%}
+{%- if built_day <= "2026-11-03" -%}
+<!-- ELECTION BAND: automatically hidden after Nov. 3 in JavaScript.
+     During no-JS visits, Jekyll needs a new build after Nov. 3 for removal. -->
+<section class="band" id="election" data-expires-after="2026-11-03" aria-labelledby="election-h">
+  <div class="band-inner">
+    <div class="band-text">
+      <h2 id="election-h">Nov. 3: three MUSD trustee seats are on the ballot</h2>
+      <p>Trustees make the final call on closures. All six candidates in Trustee Areas 1 and 5 answered our eight questions on closures, budgets and transparency; five returned signed questionnaires supporting all eight, and the sixth replied by letter.</p>
+      <p class="small">Registration deadline: Oct. 19. Conditional registration is available in person after that.</p>
+    </div>
+    <div class="band-actions">
+      <a class="btn btn-dark" href="area.html">Find my trustee area</a>
+      <a class="btn" href="https://www.change.org/p/protect-morongo-basin-schools-from-closures/u/35427639">See candidate answers</a>
+      <a class="btn" href="docs/MUSD_Candidate_8_Questions.pdf">The 8 questions <span class="tag">PDF</span></a>
+    </div>
+  </div>
+</section>
+
+{%- endif -%}

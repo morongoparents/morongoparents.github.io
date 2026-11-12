@@ -1,233 +1,89 @@
 ---
 ---
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Save Morongo Schools | Morongo Parents for Transparency</title>
-<meta content="Public information hub tracking the Landers Elementary closure debate after the Sept. 10 Landers and Sept. 22 Yucca Mesa community meetings, with MUSD documents, timelines and local reporting." name="description"/>
-<meta content="Save Morongo Schools" property="og:title"/>
-<meta content="After major public input at Landers and Yucca Mesa, the immediate closure decision is paused for now. Track the documents, unanswered questions and what happens next." property="og:description"/>
-<meta content="https://www.savemorongoschools.com" property="og:url"/>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<link href="favicon.png" rel="apple-touch-icon"/>
-<link href="styles.css" rel="stylesheet"/>
-<link href="events.css" rel="stylesheet"/>
+{% include head.html title="Save Morongo Schools | Morongo Parents for Transparency" description="More than 1,200 signatures delivered and a closure moratorium requested. Meeting dates, MUSD documents and local coverage on Morongo Basin school closures." %}
 </head>
 <body>
-<header class="top">
-<div class="identity">
-<img alt="Morongo Parents for Transparency logo" class="seal" src="img/logoparent.png"/>
-<div>
-<h1>
-      Morongo Parents for Transparency
-     </h1>
-<p>
-      Public information and action hub.
-     </p>
-</div>
-</div>
-</header>
-<nav aria-label="Page navigation" class="nav">
-<div class="nav-inner">
-<a class="primary" href="https://c.org/nWyCsHG7BM">
-     Petition
-    </a>
-<a href="#status">
-     Update
-    </a><a href="timeline.html">Timeline</a>
-<a href="events.html">Calendar</a>
-<a href="#dates">
-     Dates
-    </a>
-<a href="#documents">
-     Documents
-    </a>
-<a href="https://tally.so/r/RG8MY4" rel="noopener" target="_blank">
-     Join
-    </a>
-<a href="#share">
-     Share
-    </a>
-</div>
-</nav>
-<main class="wrap">
-<p class="small" style="margin: 0 0 12px 0;">
-  <strong>Which MUSD trustee area are you in?</strong>
-  <a href="area.html" target="_blank" rel="noopener">Check your address →</a>
-</p>
+{% include header.html active="home" %}
+
+<main id="main" tabindex="-1">
+  <!--
+    HOW THIS PAGE IS BUILT (edit the pieces, not this file):
+      Hero / status intro .. content/status.html
+      Status detail ........ content/status-details.html
+      Next up + calendar ... data/events.json   (rendered by events.js)
+      Election band ........ content/election.html
+      Documents ............ content/documents.html
+      News ................. content/press.html
+  -->
+  <div class="hero-grid">
 {% include_relative content/status.html %}
-<section id="dates">
-<h2>Next dates &amp; community calendar</h2>
-<p class="small">Upcoming events advance automatically as their dates pass. Meeting times and locations should be checked against official notices.</p>
-<div id="event-featured" aria-live="polite"><p class="small">Loading upcoming events…</p></div>
-<h3 class="events-subheading">Coming up</h3>
-<div id="event-upcoming" class="timeline" aria-live="polite"></div>
-<p class="events-more"><a href="events.html">All events &amp; past events →</a></p>
-</section>
-<section id="documents">
-<h2>
-     Key documents
-    </h2>
-<p>
-     Read the source material directly. Official district documents are listed separately from community analysis.
-    </p>
-<h3 class="subhead">
-     Official / district materials
-    </h3>
-<ul class="link-list">
-<li>
-<a href="docs/enrollment-committee-final-report-2026.pdf" rel="noopener" target="_blank">
-       Enrollment/7-11 Committee final report and recommendations →
-      </a>
-<br/>
-<span class="small">
-       Includes the recommendation that closures remain a last resort and alternatives be implemented first.
-      </span>
-</li>
-<li>
-<a href="docs/budget-stabilization-progress-2026-10-27.pdf" rel="noopener" target="_blank">
-       October 27 Board study session — Budget Stabilization Progress Updates (PDF, 40 pages) →
-      </a>
-<br/>
-<span class="small">
-       MUSD department updates covering staffing, attendance, technology, facilities and two proposed school-boundary scenarios.
-      </span>
-</li>
-<li>
-<a href="docs/aug-25-enrollment-study-session.pdf" rel="noopener" target="_blank">
-       August 25 Board study session presentation →
-      </a>
-<br/>
-<span class="small">
-       Enrollment counts, closure scenarios, boundary maps and transportation projections.
-      </span>
-</li>
-<li>
-<a href="docs/landers-personnel-savings.pdf" rel="noopener" target="_blank">
-       Personnel-savings tiers by school →
-      </a>
-<br/>
-<span class="small">
-       Shows gross personnel savings assumptions used in the closure discussion.
-      </span>
-</li>
-<li>
-<a href="docs/2026BudgetStabilizationReport_MorongoUSD_FINAL-(002).pdf" rel="noopener" target="_blank">
-       School Leaders budget stabilization report →
-      </a>
-</li>
-<li>
-<a href="docs/MUSDBudgetStabilization_04292026-(2).pdf" rel="noopener" target="_blank">
-       Budget stabilization review →
-      </a>
-</li>
-</ul>
-<details class="analysis-details">
-<summary>
-      Community analysis / hearing materials
-     </summary>
-<p class="small">These are independent community analyses and hearing materials, not district-issued reports. Post-hearing reports rely on a working transcript and meeting notes; exact quotations should be checked against the recording.</p>
-<ul class="link-list compact-list"><li><a href="docs/landers-post-hearing-dossier-2page.pdf" rel="noopener" target="_blank">Sept. 10 Landers hearing: 2-page post-hearing dossier →</a><br/>
-      <span class="small">Fast recap of what was said, what remains unanswered, and the next public questions.</span></li>
-<li><a href="docs/landers-post-hearing-longform-8page.pdf" rel="noopener" target="_blank">Sept. 10 Landers hearing: 8-page report →</a><br/><span class="small">Longform account of the hearing, district case, community testimony and unresolved decision questions.</span></li>
-      
-<li>
-<a href="docs/landers-gross-vs-net-community-analysis.pdf" rel="noopener" target="_blank">
-        Landers: gross savings vs. net effect →
-       </a>
-</li>
-<li>
-<a href="docs/landers-sept10-community-presentation.pdf" rel="noopener" target="_blank">
-        Landers Sept. 10 community presentation →
-       </a>
-</li>
-</ul>
-</details>
-</section>
-<section id="share">
-<h2>
-     Share this information
-    </h2>
-<p>
-     Please share this hub with other MUSD families and community members. The immediate Landers closure decision is paused for now, but the underlying budget, enrollment and boundary debate continues.
-     <strong>
-      Keep sharing the documents and following the meetings. This is not over.
-     </strong>
-</p>
-<div class="share-buttons">
-<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com" rel="noopener" target="_blank">
-      Facebook
-     </a>
-<a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&amp;text=Save%20Morongo%20Schools" rel="noopener" target="_blank">
-      X / Twitter
-     </a>
-<a class="share-btn" href="mailto:?subject=Save Morongo Schools update&amp;body=Landers closure update: the immediate decision is paused for now. Follow the MUSD meetings, documents and timeline here: https://www.savemorongoschools.com">
-      Email
-     </a>
-<a class="share-btn" href="sms:?&amp;body=Save Morongo Schools update: https://www.savemorongoschools.com">
-      Text
-     </a>
-<button class="share-btn" id="copy-link" type="button">
-      Copy Link
-     </button>
-<button class="share-btn" id="native-share" type="button">
-      Share…
-     </button>
-</div>
-<p aria-live="polite" class="small" id="copy-status">
-</p>
-<div class="qr-grid">
-<div class="qr-card">
-<h3>
-       Website QR
-      </h3>
-<img alt="QR code linking to Save Morongo Schools website" class="qr-image" src="img/page-qr-code.png"/>
-<p class="qr-label">
-       Scan to open this website
-      </p>
-<p class="small">
-       savemorongoschools.com
-      </p>
-<a class="share-btn download-btn" download="" href="img/page-qr-code.png">
-       Download Website QR
-      </a>
-</div>
-<div class="qr-card">
-<h3>
-       Petition QR
-      </h3>
-<img alt="QR code linking to the petition" class="qr-image" src="img/petition-qrcode.png"/>
-<p class="qr-label">
-       Scan to sign the petition
-      </p>
-<p class="small">
-       Use this on flyers and handouts.
-      </p>
-<a class="share-btn download-btn" download="" href="img/petition-qrcode.png">
-       Download Petition QR
-      </a>
-</div>
-</div>
-</section>
+
+    <aside class="next-up" id="dates" aria-labelledby="next-up-h">
+      <h2 class="sr-only" id="next-up-h">Next dates</h2>
+      <div id="event-featured"><p class="event-empty">Loading upcoming events…</p></div>
+      <span id="event-announcement" class="sr-only" role="status" aria-live="polite"></span>
+      <div class="upcoming-wrap">
+        <h3 class="upcoming-heading">Coming up</h3>
+        <div id="event-upcoming" data-compact="true"></div>
+      </div>
+      <noscript>
+        <style>#event-featured, .upcoming-wrap { display: none !important; }</style>
+        <p class="nojs-events">Upcoming dates need JavaScript to show here. For official meeting notices, see the <a href="https://www.morongousd.org/">district website</a>.</p>
+      </noscript>
+      <a class="next-up-foot more" href="events.html">Full calendar &amp; past events</a>
+    </aside>
+{% include_relative content/status-details.html %}
+  </div>
+
+{% include_relative content/election.html %}
+
+{% include_relative content/documents.html %}
+
 {% include_relative content/press.html %}
-<footer>
-<p>
-     Morongo Parents for Transparency is a community information effort. This site is not affiliated with or endorsed by MUSD.
-    </p>
-<p>
-     Contact / volunteer:
-     <a href="mailto:morongoparents@proton.me">
-      morongoparents@proton.me
-     </a>
-</p>
-<p>Last updated: <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ site.time | date: '%B %-d, %Y' }}</time> <span class="small">(site deployment)</span></p>
-</footer>
+
+  <section class="band share-band" id="share" aria-labelledby="share-h">
+    <div class="band-inner">
+      <div class="band-text">
+        <h2 id="share-h">Help another family find this</h2>
+        <p>Schools are open, but no closure policy is settled yet. Share the page so more families follow the moratorium request and the Board meetings.</p>
+      </div>
+      <div class="share-buttons">
+        <button class="share-btn primary" id="native-share" type="button" hidden>Share…</button>
+        <button class="share-btn" id="copy-link" type="button">Copy link</button>
+        <a class="share-btn" href="sms:?&amp;body=Save%20Morongo%20Schools%3A%20https%3A%2F%2Fwww.savemorongoschools.com">Text</a>
+        <a class="share-btn" href="mailto:?subject=Save%20Morongo%20Schools&amp;body=Meeting%20dates%2C%20documents%20and%20updates%20on%20MUSD%20school%20closures%3A%20https%3A%2F%2Fwww.savemorongoschools.com">Email</a>
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.savemorongoschools.com">Facebook</a>
+        <a class="share-btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.savemorongoschools.com&amp;text=Save%20Morongo%20Schools">X</a>
+        <p aria-live="polite" class="small" id="copy-status"></p>
+      </div>
+    </div>
+    <details class="qr-details">
+      <summary class="qr-details-inner">QR codes for flyers and handouts</summary>
+      <div class="qr-details-inner">
+        <div class="qr-grid">
+          <div class="qr-card">
+            <h3>This website</h3>
+            <img alt="QR code linking to savemorongoschools.com" class="qr-image" src="img/page-qr-code.png" width="160" height="160" loading="lazy">
+            <a class="btn" download="" href="img/page-qr-code.png">Download</a>
+          </div>
+          <div class="qr-card">
+            <h3>The petition</h3>
+            <img alt="QR code linking to the petition" class="qr-image" src="img/petition-qrcode.png" width="160" height="160" loading="lazy">
+            <a class="btn" download="" href="img/petition-qrcode.png">Download</a>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
 </main>
-<script defer="" src="events.js"></script>
-<script defer="" src="script.js">
-</script>
+
+{% capture updated %}{{ site.time | date: '%B %-d, %Y' }}{% endcapture %}
+{% include footer.html updated=updated %}
+
+<script defer src="events.js"></script>
+<script defer src="script.js"></script>
 </body>
 </html>

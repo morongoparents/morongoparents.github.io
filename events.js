@@ -1,4 +1,4 @@
-/* Morongo Parents calendar v1.0 — no dependencies, backend, or build step.
+/* Morongo Parents calendar v2.1 — no dependencies, backend, or build step.
    Source of truth: data/events.json. All times are Morongo Basin (America/Los_Angeles).
 */
 (function (root) {
@@ -99,9 +99,9 @@
   function link(parent, label, href) {
     const safe = safeHref(href);
     if (!safe) return;
-    const a = el('a', '', label);
+    const a = el('a', '', label); // the arrow is drawn by CSS
     a.href = safe;
-    if (new URL(safe).origin !== location.origin) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    if (new URL(safe).origin !== location.origin) a.rel = 'noopener';
     parent.append(a);
   }
   function pills(parent, event, clock) {
@@ -111,42 +111,71 @@
   }
   function references(parent, event) {
     const p = el('div', 'event-links');
-    link(p, 'Event details →', event.url);
-    link(p, 'Official source →', event.sourceUrl);
+    link(p, 'Event details', event.url);
+    link(p, 'Source', event.sourceUrl);
     if (p.childNodes.length) parent.append(p);
   }
   // Feature the chronologically next event, whatever its category.
-  // The traditional red pulse is an attention cue, NOT a live-status claim.
+  // The red pulse beside the label is the site's signature attention cue for
+  // the closest event; it is not a claim that the event is live.
   function featuredLabel(event) {
     return {
-      board: 'Next Board Meeting',
-      hearing: 'Next Public Hearing',
-      community: 'Next Community Event',
-      election: 'Next Election',
-      deadline: 'Upcoming Deadline',
-      other: 'Next Event'
-    }[event.category] || 'Next Event';
+      board: 'Next Board meeting',
+      hearing: 'Next public hearing',
+      community: 'Next community event',
+      election: 'Next election',
+      deadline: 'Upcoming deadline',
+      other: 'Next event'
+    }[event.category] || 'Next event';
   }
   function selectFeatured(future) {
     // partition() already sorts upcoming events by local date and start time.
     return future[0] || null;
   }
+  function dayDiff(a, b) {
+    return Math.round((Date.parse(a + 'T12:00:00Z') - Date.parse(b + 'T12:00:00Z')) / 86400000);
+  }
+  // "Today", "Tomorrow" or "Tue, Oct 27" relative to the Morongo Basin clock.
+  function relativeDay(value, clock) {
+    const diff = dayDiff(value, clock.date);
+    if (diff === 0) return 'Today';
+    if (diff === 1) return 'Tomorrow';
+    return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'short', month: 'short', day: 'numeric' })
+      .format(new Date(value + 'T12:00:00Z'));
+  }
   function eventCard(event, clock) {
     const card = el('div', 'next-date');
     const labelWrap = el('div', 'date-label-wrap');
     labelWrap.append(el('span', 'date-label', featuredLabel(event)));
-    labelWrap.append(el('span', 'live-dot')); // restored permanent red pulse
+    const dot = el('span', 'live-dot');
+    dot.setAttribute('aria-hidden', 'true');
+    labelWrap.append(dot);
     card.append(labelWrap);
-    const heading = el('h3', '', printableDate(event.date, true) + (event.startTime ? ' · ' + printableTime(event.startTime) : ''));
-    card.append(heading);
-    const title = el('p');
-    title.append(el('strong', '', event.title)); pills(title, event, clock);
+    const title = el('h3', '', event.title);
+    pills(title, event, clock);
     card.append(title);
+    card.append(el('p', 'next-when', relativeDay(event.date, clock) + (event.startTime ? ' · ' + timeLabel(event) : '')));
     if (event.location) card.append(el('p', 'event-meta', event.location));
     if (event.description) card.append(el('p', 'event-description', event.description));
-    if (event.startTime && event.endTime) card.append(el('p', 'event-meta', 'Time: ' + timeLabel(event)));
     references(card, event);
     return card;
+  }
+  function compactItem(event, clock) {
+    const item = el('li', 'upcoming-item');
+    const badge = el('span', 'cal-badge');
+    const date = new Date(event.date + 'T12:00:00Z');
+    badge.append(el('span', 'cal-mon', new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'short' }).format(date)));
+    badge.append(el('span', 'cal-day', String(date.getUTCDate())));
+    item.append(badge);
+    const body = el('span', 'upcoming-body');
+    const title = el('span', 'upcoming-title', event.title);
+    pills(title, event, clock);
+    body.append(title);
+    const place = event.location.split(' · ')[0];
+    const meta = [event.startTime ? timeLabel(event) : '', place].filter(Boolean).join(' · ');
+    if (meta) body.append(el('span', 'upcoming-meta', meta));
+    item.append(body);
+    return item;
   }
   function timelineItem(event, clock, archive) {
     const item = el('div', 'timeline-item' + (archive ? ' event-archive-item' : ''));
@@ -155,8 +184,7 @@
     const body = el('div', 'timeline-text');
     const name = el('span', 'event-item-title', event.title);
     body.append(name);
-    // Avoid noisy/redundant gray all-caps categories such as "DEADLINE".
-    // Categories remain available for calendar filtering and event metadata.
+    // Categories stay available for filtering, but are not printed on each row.
     pills(body, event, clock);
     body.append(el('div', 'event-meta', (event.startTime ? timeLabel(event) + (event.location ? ' · ' : '') : '') + event.location));
     if (event.description) body.append(el('p', 'event-description', event.description));
@@ -166,12 +194,19 @@
   }
   function empty(target, message) { target.replaceChildren(el('p', 'event-empty', message)); }
   let allEvents = null;
+  let lastRenderKey = '';
   function render() {
     if (!allEvents) return;
     const clock = localClock(new Date());
     const category = document.getElementById('event-category-filter')?.value || 'all';
     const events = category === 'all' ? allEvents : allEvents.filter(e => e.category === category);
     const { future, archive } = partition(events, clock);
+    // Only replace the DOM when something visible changes. Replacing cards
+    // every minute needlessly disrupts keyboard focus and screen-reader reading.
+    const key = category + '|' + clock.date + '|' + JSON.stringify(events) + '|' +
+      events.map(e => e.id + ':' + state(e, clock)).join('|');
+    if (key === lastRenderKey) return;
+    lastRenderKey = key;
     const featured = document.getElementById('event-featured');
     const short = document.getElementById('event-upcoming');
     const mainEvent = selectFeatured(future);
@@ -183,8 +218,13 @@
       // Show the following dates in chronological order, without duplicating
       // the earliest event featured above.
       const otherEvents = future.filter(e => !mainEvent || e.id !== mainEvent.id);
-      if (otherEvents.length) short.replaceChildren(...otherEvents.slice(0, 4).map(e => timelineItem(e, clock, false)));
-      else empty(short, 'No additional events scheduled.');
+      const next = otherEvents.slice(0, 4);
+      if (!next.length) empty(short, 'No additional events scheduled.');
+      else if (short.dataset.compact) {
+        const list = el('ol', 'upcoming-list');
+        list.append(...next.map(e => compactItem(e, clock)));
+        short.replaceChildren(list);
+      } else short.replaceChildren(...next.map(e => timelineItem(e, clock, false)));
     }
     const long = document.getElementById('event-calendar-upcoming');
     if (long) {
@@ -200,13 +240,21 @@
   async function refresh() {
     const response = await fetch('data/events.json', {cache: 'no-store'});
     if (!response.ok) throw new Error('HTTP ' + response.status);
+    const firstLoad = !allEvents;
     allEvents = normalize(await response.json());
     render();
+    if (firstLoad) {
+      const message = document.getElementById('event-announcement');
+      if (message) message.textContent = 'Upcoming events loaded.';
+    }
   }
   function reportError() {
     for (const id of ['event-featured', 'event-calendar-upcoming']) {
       const target = document.getElementById(id);
-      if (target && !allEvents) empty(target, 'Calendar could not be loaded. Please try refreshing.');
+      if (target && !allEvents) {
+        empty(target, 'Calendar could not be loaded. Please try refreshing.');
+        target.setAttribute('role', 'alert');
+      }
     }
   }
   function init() {
@@ -218,7 +266,7 @@
     document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
   }
   // Export testable, pure time logic without exposing editing or publishing permissions.
-  const api = { validDate, normalize, localClock, state, partition, printableTime, featuredLabel, selectFeatured, init };
+  const api = { validDate, normalize, localClock, state, partition, printableTime, featuredLabel, selectFeatured, relativeDay, init };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof document !== 'undefined') {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

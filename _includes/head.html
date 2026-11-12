@@ -1,0 +1,27 @@
+{%- comment -%}
+  Shared <head> tags. Use from any page with front matter:
+  {% include head.html title="Page title" description="One sentence for search and share previews." %}
+{%- endcomment -%}
+{%- assign site_url = "https://www.savemorongoschools.com" -%}
+{%- assign page_path = page.url | replace: "index.html", "" -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ include.title }}</title>
+<meta name="description" content="{{ include.description }}">
+<link rel="canonical" href="{{ site_url }}{{ page_path }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Save Morongo Schools">
+<meta property="og:title" content="{{ include.title }}">
+<meta property="og:description" content="{{ include.description }}">
+<meta property="og:url" content="{{ site_url }}{{ page_path }}">
+<meta property="og:image" content="{{ site_url }}/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Save Morongo Schools — meeting dates, district documents and updates on MUSD school closures">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#7a1b1b">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/public-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
