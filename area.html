@@ -1,23 +1,9 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Find Your MUSD Trustee Area | Save Morongo Schools</title>
-<meta
-  content="Enter your address to find your Morongo Unified School District trustee area, current 2026 MUSD candidates, and state and federal legislative districts."
-  name="description"
-/>
-<meta content="Find Your MUSD Trustee Area | Save Morongo Schools" property="og:title"/>
-<meta
-  content="Enter your address to find your MUSD trustee area and other districts that represent you."
-  property="og:description"
-/>
-<meta content="https://www.savemorongoschools.com/area.html" property="og:url"/>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<link href="favicon.png" rel="apple-touch-icon"/>
-<link href="styles.css" rel="stylesheet"/>
-
+{% include head.html title="Find your MUSD trustee area | Save Morongo Schools" description="Enter your address to find your Morongo Unified School District trustee area, the 2026 MUSD candidates, and your state and federal legislative districts." %}
 <style>
   /* Small page-level bridge between the existing Save Morongo Schools
      stylesheet and the portable district-finder beta component. */
@@ -31,12 +17,12 @@
   }
 
   musd-district-finder {
-    --finder-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    --finder-font: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
     --finder-bg: var(--paper, #ffffff);
     --finder-text: var(--ink, #1f2328);
     --finder-muted: var(--muted, #606975);
     --finder-border: var(--line, #d8d2c8);
-    --finder-soft: #f7f4ee;
+    --finder-soft: var(--bg, #f7f4ee);
     --finder-accent: var(--accent, #7f1d1d);
     --finder-radius: 8px;
     --finder-max-width: 760px;
@@ -48,70 +34,20 @@
     }
   }
 </style>
-
-<script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin="">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@turf/turf@7.4.0/turf.min.js"></script>
 </head>
-
 <body>
+{% include header.html active="area" %}
 
-  <!--
-    Portable, deliberately neutral Web Component.
-
-    Host-site theming example:
-
-    musd-district-finder {
-      --finder-accent: #8a4f2b;
-      --finder-font: Georgia, serif;
-      --finder-radius: 6px;
-    }
-  -->
-</head>
-
-<body>
-<header class="top">
-  <div class="identity">
-    <img alt="Morongo Parents for Transparency logo" class="seal" src="img/logoparent.png"/>
-    <div>
-      <h1>Morongo Parents for Transparency</h1>
-      <p>Public information and action hub.</p>
-    </div>
-  </div>
-</header>
-
-<nav aria-label="Page navigation" class="nav">
-  <div class="nav-inner">
-    <a class="primary" href="https://c.org/nWyCsHG7BM">Petition</a>
-    <a href="index.html#status">Update</a>
-    <a href="timeline.html">Timeline</a>
-    <a href="index.html#dates">Dates</a>
-    <a href="index.html#documents">Documents</a>
-    <a href="index.html">Home</a>
-  </div>
-</nav>
-
-<main class="wrap area-page">
-  <p class="small area-back">
-    <a href="index.html">← Back to Save Morongo Schools</a>
-  </p>
-
+<main id="main" tabindex="-1" class="wrap-narrow area-page">
+  <!-- Portable web component; theme it with the --finder-* variables in the <style> block above. -->
   <musd-district-finder></musd-district-finder>
-
-  <footer>
-    <p>
-      Morongo Parents for Transparency is a community information effort.
-      This site is not affiliated with or endorsed by MUSD.
-    </p>
-    <p>
-      Contact / volunteer:
-      <a href="mailto:morongoparents@proton.me">morongoparents@proton.me</a>
-    </p>
-  </footer>
 </main>
+
+{% capture updated %}{{ site.time | date: '%B %-d, %Y' }}{% endcapture %}
+{% include footer.html updated=updated %}
+
 
 <script>
 class MusdDistrictFinder extends HTMLElement {
@@ -2223,7 +2159,8 @@ class MusdDistrictFinder extends HTMLElement {
   }
 }
 
-customElements.define("musd-district-finder", MusdDistrictFinder);
+// Leaflet and Turf load with "defer", so register the component once they are ready.
+document.addEventListener("DOMContentLoaded", () => customElements.define("musd-district-finder", MusdDistrictFinder));
 </script>
 </body>
 </html>
